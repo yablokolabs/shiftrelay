@@ -57,5 +57,20 @@
       "Run a 100-label test on the current media lot.",
       "Record the media lot, firmware, and roller temperature."
     ]
+  },
+  {
+    "fixId": "fix-p109-cover-004",
+    "version": 1,
+    "sourceCaseId": "case-008-p109-cover",
+    "symptom": "Access cover reports open after 50 cycles even when the latch is closed.",
+    "model": "P109",
+    "supportedFirmware": ["1.8"],
+    "prerequisites": ["Cover latch inspected", "Power removed"],
+    "steps": [
+      "Power down and inspect the cover latch for wear.",
+      "Reseat the cover sensor connector and check the service log for intermittent open events.",
+      "Run 60 open/close cycles and record the first false-open event.",
+      "Escalate if the false-open event returns before 60 cycles."
+    ]
   }
 ]

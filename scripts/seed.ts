@@ -193,6 +193,7 @@ async function main() {
   await ensureProposed("fix-p100-roller-003#v1");
   await ensureApproved("fix-p100-roller-003#v1");
   await ensureProposed("fix-p100-roller-003#v2");
+  await ensureProposed("fix-p109-cover-004#v1");
   const rollerV1 = controlStore.getFix("fix-p100-roller-003", 1);
   const rollerV2 = controlStore.getFix("fix-p100-roller-003", 2);
 

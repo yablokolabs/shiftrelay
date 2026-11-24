@@ -1,0 +1,58 @@
+{
+  "decisionId": "9f46f7cb-d646-46f9-80f6-178356cf312e",
+  "caseId": "case-005-p109-cutter",
+  "sessionId": "7501524181201e8192e40b4b26755047",
+  "conversationId": "7501524181201e8192e40b4b26755047",
+  "retrieved": {
+    "sessionId": "7501524181201e8192e40b4b26755047",
+    "conversationId": "7501524181201e8192e40b4b26755047",
+    "source": "shared_knowledge",
+    "fixId": "fix-p109-cutter-002",
+    "fixVersion": 1,
+    "memoryId": "8dc1e89c-c15d-4b5a-b2ae-b6d67ccab350",
+    "distance": 1.033578936037806,
+    "rerankScore": 0.9984690785193624,
+    "retrievedAt": "2026-11-24T17:09:47.792Z"
+  },
+  "canonical": {
+    "fixId": "fix-p109-cutter-002",
+    "version": 1,
+    "status": "withdrawn",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:37.887Z",
+    "currentVersion": 1,
+    "revision": 7
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p109-cutter-002 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p109-cutter-002 v1 resolved from the control store (revision 7)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "fail",
+      "detail": "Fix is withdrawn: Synthetic safety review: sensor reseat step needs a revised torque value."
+    }
+  ],
+  "outcome": "withheld",
+  "headline": "Withheld: fix withdrawn",
+  "answer": "The technician withdrew this fix. Do not apply it, even though retrieval still returned it.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:09:47.792Z",
+  "latencyMs": 1637,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": "6a1fde9583a1252e349e5f429d5828e32019b86c620738fb5bd4be49e1dd4518",
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

@@ -85,5 +85,18 @@
     "transcript": [
       { "role": "technician", "text": "P100 firmware 2.4 with the same fading symptom. This case is used to test duplicate approval handling." }
     ]
+  },
+  {
+    "caseId": "case-008-p109-cover",
+    "title": "Returns desk — cover reports open",
+    "model": "P109",
+    "firmware": "1.8",
+    "site": "Synthetic returns desk",
+    "symptom": "Access cover reports open after 50 cycles even when the latch is closed. The report clears after a restart and returns.",
+    "prerequisitesMet": ["Cover latch inspected", "Power removed"],
+    "transcript": [
+      { "role": "technician", "text": "P109 firmware 1.8. The access cover reports open after about 50 cycles even though the latch is closed. A restart clears it until the next run." },
+      { "role": "intake", "text": "Captured as an awaiting-approval demo case. No fix has been shared yet." }
+    ]
   }
 ]
