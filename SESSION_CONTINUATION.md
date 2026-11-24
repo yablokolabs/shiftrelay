@@ -1,0 +1,1 @@
+Read docs/PROGRESS.md and inspect Git status. Resume the first incomplete milestone. Preserve failed checks and report their resolution. Checkpoint every milestone or 30 minutes with commit, results, blockers and next action.

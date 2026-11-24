@@ -1,0 +1,64 @@
+{
+  "milestone": "M0",
+  "synthetic": true,
+  "checked_at": "2026-11-24T16:36:34.598Z",
+  "datapack": {
+    "id": "f28dc489-57a2-4b04-aab0-5d6689cba714",
+    "name": "shiftrelay"
+  },
+  "contract": {
+    "mcp_url": "https://mcp.mekodata.ai/mcp",
+    "rest_base": "https://api.mekodata.ai/api/v1",
+    "protocol": "MCP 2025-06-18 (Streamable HTTP, stateless)",
+    "tools_verified": [
+      "conversation_create",
+      "conversation_add_message",
+      "memory_add",
+      "memory_search",
+      "artifact_get"
+    ],
+    "rest_verified": [
+      "GET /health",
+      "GET /datapacks",
+      "POST /artifacts",
+      "GET /artifacts/{hash}"
+    ]
+  },
+  "session_a": {
+    "label": "intake",
+    "agent_id": "shiftrelay:intake",
+    "conversation_id": "9d87fd210f92e980ff2f0cc8e8d2d05b",
+    "case_id": "case-m0-smoke-001",
+    "memory_id": "4c80736b-cd79-4fe9-bd03-78e0aa8c3b6c",
+    "memory_result": {
+      "results": [
+        {
+          "id": "4c80736b-cd79-4fe9-bd03-78e0aa8c3b6c",
+          "memory": "SHIFTRELAY-M0-P100-FUSER P100 firmware 2.4 faint print after 20-30 pages; fuser pressure reset restored darkness. Proposed learning only, not yet approved.",
+          "event": "ADD",
+          "actor_id": null,
+          "role": "user"
+        }
+      ]
+    }
+  },
+  "session_b": {
+    "label": "next-shift",
+    "agent_id": "shiftrelay:next-shift",
+    "conversation_id": "7beaf1e2c2a4ce18c57ed7b3bf5de316",
+    "search_result_count": 3,
+    "memory_found": true,
+    "artifact_found": true,
+    "artifact_hash": "10acc03ad6b64f8c0e04512a369eadb9d30a3d791f46ab019985fb4cab7fbe54",
+    "local_hash_matches": true,
+    "search_digest": "86700cfdddd16c2d029a675158512ae8c1fa1a9a4d4b10731ae7dea49513a5ac",
+    "artifact_digest": "26bcd8dd39767235b4edf3e77cb69243441b97aa8d3cf216815d056e998f54a4",
+    "search_excerpt": "n_id\":\"7451788fa07ddd708e6fb92a51af38d2\",\"attributed_to\":\"user\"},{\"id\":\"4c80736b-cd79-4fe9-bd03-78e0aa8c3b6c\",\"memory\":\"SHIFTRELAY-M0-P100-FUSER P100 firmware 2.4 faint print after 20-30 pages; fuser pressure reset restored darkness. Proposed learning only, not yet approved.\",\"hash\":\"97ef61f01e2cbbed835e27fe3c50a91e\",\"metadata\":{\"state\":\"proposed\",\"fix_id\":\"fix-p100-fuser-001\","
+  },
+  "result": "PASS",
+  "limitations": [
+    "Synthetic case only.",
+    "The MCP endpoint is stateless in this deployment; sessions are separate initialize cycles and separate conversation containers, not server-side session objects.",
+    "Memory extraction is asynchronous; the direct memory_add was used so the check does not depend on extraction latency."
+  ]
+}
