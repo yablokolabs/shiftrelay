@@ -20,7 +20,8 @@ Suggested topics: `meko`, `mcp`, `yugabytedb`, `typescript`, `react`, `shared-me
 
 ## Video
 
-- [x] Under five minutes: 1:08 narrated explainer, plus a 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
+- [x] Under five minutes: one 2:06 submission cut, combining the 1:08 narrated explainer and the 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
+- [x] One continuous video with a handoff card and clean, re-set walkthrough captions; the standalone capture remains as supporting evidence.
 - [x] Synthetic cases visibly labeled on every decision card.
 - [x] No API key, account identity, private transcript or owner email on screen.
 - [x] Shows Friday's approval, Monday's fresh-session question, a withdrawn-fix withhold and the measured comparison.

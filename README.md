@@ -123,8 +123,8 @@ assets/          Supplied ShiftRelay logo and icon
 
 [![ShiftRelay demo](docs/demo/poster.jpg)](docs/demo/shiftrelay-demo.mp4)
 
-- Explainer (1:08, narrated, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4)
-- Genuine UI walkthrough (0:56, silent, captioned): [`docs/demo/shiftrelay-walkthrough.mp4`](docs/demo/shiftrelay-walkthrough.mp4)
+- One continuous submission demo (2:06, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4) — 1:08 narrated explainer, a short handoff, then the 0:56 genuine Chromium walkthrough with clean captions.
+- Standalone genuine UI capture (0:56, silent): [`docs/demo/shiftrelay-walkthrough.mp4`](docs/demo/shiftrelay-walkthrough.mp4) — the component used in the combined cut.
 - Demo storyboard, narration and recording notes: [`docs/DEMO.md`](docs/DEMO.md)
 - Meko contract and observed operations: [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md)
 - Unsupported features: [`docs/UNSUPPORTED.md`](docs/UNSUPPORTED.md)

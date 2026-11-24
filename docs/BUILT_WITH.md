@@ -12,6 +12,6 @@ Only technologies actually used and verified:
 - **Node test runner via tsx** — deterministic unit tests for applicability and revision guards.
 - **Remotion 4.0.534** — programmatic 1920×1080 explainer with React scenes, transitions and audio.
 - **Piper TTS** — local British female narration (`en_GB-jenny_dioco-medium`); no hosted voice API or key.
-- **Chromium + ffmpeg** — headless visual checks, genuine UI capture, final H.264/AAC encode.
+- **Chromium + ffmpeg** — headless visual checks, genuine UI capture, combined 2:06 cut, H.264/AAC encode.
 
 Not used: external model APIs (no key supplied), S3 configuration, VideoWright (not available), diagram-design (not available).

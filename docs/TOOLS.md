@@ -14,7 +14,7 @@ Checked 2026-11-24 before building.
 | diagram-design | **Not available** in this session | No such skill or tool found. README diagram authored as SVG using the local architecture-diagram design guidance |
 | Playwright | **Not installed locally** | Chromium and ffmpeg were available through the session tooling for visual checks |
 | Chromium | **Available** at `/root/.hermes/tools/chromium-1208/chrome-linux64/chrome` | Headless screenshots and CDP-driven UI checks |
-| ffmpeg | **Available** | UI capture assembly, final H.264/AAC encode and audio level check |
+| ffmpeg | **Available** | UI capture assembly, combined 2:06 cut, caption lower third, final H.264/AAC encode and audio level check |
 | Local MCP server `jnaapakam` | Configured but unrelated | Not used |
 
 No external model key was used. `MODEL_PROVIDER=deterministic`; the optional OpenRouter adapter stays disabled unless the operator supplies a key.

@@ -1,14 +1,25 @@
 # Demo
 
-The submission cut is **1:08**, well under the five-minute limit. It is a narrated 1080p explainer built from the frozen synthetic cases. A separate 0:56 genuine UI walkthrough is preserved as supporting footage.
+The submission cut is one continuous **2:06** video, well under the five-minute limit. It opens with the 1:08 narrated 1080p explainer, cuts through a 2.4-second handoff card, and ends with the 0:56 genuine Chromium walkthrough at 1080p. All footage uses synthetic printer cases.
 
 | Asset | Length | What it is |
 | --- | --- | --- |
-| [`docs/demo/shiftrelay-demo.mp4`](demo/shiftrelay-demo.mp4) | **1:08** | Narrated 1920×1080 explainer. Hook, problem, four-step flow, live gate decisions, measured results, close. |
-| [`docs/demo/shiftrelay-walkthrough.mp4`](demo/shiftrelay-walkthrough.mp4) | **0:56** | Genuine Chromium capture of the running UI at 1440×900. Silent, burned-in captions, including a live approval. |
+| [`docs/demo/shiftrelay-demo.mp4`](demo/shiftrelay-demo.mp4) | **2:06** | Combined submission cut. Narrated explainer, handoff card, then the genuine UI walkthrough with clean captions. |
+| [`docs/demo/shiftrelay-walkthrough.mp4`](demo/shiftrelay-walkthrough.mp4) | **0:56** | Standalone genuine Chromium capture at 1440×900. Silent, with the original burned-in captions. |
 | [`docs/demo/poster.jpg`](demo/poster.jpg) | — | Poster frame from the gate scene. |
 
-Both use synthetic printer cases only. No API key, account identity, owner email or private transcript appears on screen.
+The standalone capture's burned-in captions are clipped at the bottom edge. The combined cut crops that edge, re-sets the captions in a 128px lower third, and keeps the full decision path visible.
+
+All segments use synthetic cases only. No API key, account identity, owner email or private transcript appears on screen.
+
+## Combined timeline
+
+| Time | Segment | What is shown |
+| --- | --- | --- |
+| 0:00 | Explainer | Six scenes: hook, problem, four-step flow, gate decisions, measured results, close. |
+| 1:08 | Handoff | 2.4-second card: **Now, the running console.** |
+| 1:10 | Walkthrough | Genuine Chromium console: intake, approval, fresh session, evidence table. |
+| 2:06 | End | Final evidence table, then silence. |
 
 ## Explainer storyboard
 
@@ -43,15 +54,19 @@ REMOTION_BROWSER=/path/to/chrome npm run render
 
 `REMOTION_BROWSER` is only needed where Remotion cannot download its own browser.
 
+The submission cut is assembled with ffmpeg from that render and the genuine capture: 2.4-second handoff card, then the walkthrough normalized to 1632×952 inside a 1920×1080 frame, with a 128px lower third for re-set captions. The result is 1920×1080 at 30 fps, H.264 CRF 20, AAC 48 kHz stereo; the walkthrough section carries silent audio so the timeline stays continuous.
+
 ## Genuine UI walkthrough
 
 The earlier capture remains useful as proof that the console runs. It shows the actual intake transcript, approval queue, fresh-session decision trace and evidence panel from the seeded build, including the live promotion of the proposed P109 cover fix.
+
+The standalone file preserves the original 1440×900 capture and its burned-in captions. In the combined cut, the clipped caption edge is cropped and the same captions are re-set in a clean lower third at 1080p.
 
 Recording notes:
 
 - Record only the seeded synthetic fixtures. Do not show `.env`, the Meko portal key screen, account identity or any private transcript.
 - If approval is recorded live, wait for `memory_promote` confirmation before moving on.
-- Keep any recording under 5:00. The delivered explainer is 1:08.
+- Keep any recording under 5:00. The delivered combined cut is 2:06.
 
 ## Reproduction
 

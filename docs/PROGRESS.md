@@ -65,16 +65,17 @@ See `docs/EVALUATION.md`. Negative results are preserved: live retrieval after w
 - Token counts are not exposed; both arms use the deterministic responder.
 - Synthetic fixtures only.
 
-## M4 — narrated explainer and public repository (complete)
+## M4 — narrated explainer, combined demo and public repository (complete)
 
 Date: 2026-11-24
 
 - Built a **1:08** 1920×1080 Remotion explainer with six scenes: hook, problem, four-step flow, gate decisions, measured results, close. Source: `video/`.
 - Narration is local Piper (`en_GB-jenny_dioco-medium`, British female), six lines aligned to scene starts; no hosted TTS or external model key.
-- Preserved the genuine 0:56 UI walkthrough as `docs/demo/shiftrelay-walkthrough.mp4`; submission cut is `docs/demo/shiftrelay-demo.mp4` (21 MB, H.264/AAC).
+- Preserved the genuine 0:56 UI walkthrough as `docs/demo/shiftrelay-walkthrough.mp4`; the submission cut is one 2:06 video at `docs/demo/shiftrelay-demo.mp4` (23 MB, H.264/AAC).
+- Combined the cuts with a 2.4-second handoff card. Re-set the walkthrough's clipped burned-in captions in a 128px lower third, normalized it to 1080p, and kept the walkthrough section silent.
 - Every decision card is labeled synthetic; no owner identity, credential or attribution footer appears in the video or docs.
 - Updated README, demo storyboard, tools and built-with docs; public repository at <https://github.com/yablokolabs/shiftrelay>.
 
 ### Next action
 
-Submission-ready. Optional: upload the 1:08 cut to the operator's preferred host and link it from the Devpost entry.
+Submission-ready. Optional: upload the 2:06 combined cut to the operator's preferred host and link it from the Devpost entry.
