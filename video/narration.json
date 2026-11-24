@@ -1,0 +1,38 @@
+[
+  {
+    "id": "hook",
+    "start": 0,
+    "window": 6.6,
+    "text": "A good fix should not leave with the shift that found it."
+  },
+  {
+    "id": "problem",
+    "start": 7,
+    "window": 10.7,
+    "text": "Fixes vanish with the shift. Firmware changes the answer. And retrieval is not approval."
+  },
+  {
+    "id": "workflow",
+    "start": 18,
+    "window": 17.3,
+    "text": "Capture the case. A technician approves the fix. A fresh session retrieves it. Then a deterministic gate checks the record before recommending anything."
+  },
+  {
+    "id": "decision",
+    "start": 36,
+    "window": 13.5,
+    "text": "No firmware? Ask. Withdrawn fix? Withhold, even when retrieval returns the old snapshot."
+  },
+  {
+    "id": "proof",
+    "start": 50,
+    "window": 10.4,
+    "text": "Sixteen decisions. Every outcome matched. Zero incorrect recommendations. All seven control checks passed."
+  },
+  {
+    "id": "outro",
+    "start": 61,
+    "window": 6.4,
+    "text": "ShiftRelay. The next shift starts with what the last shift learned."
+  }
+]

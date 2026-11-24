@@ -1,0 +1,11 @@
+import {bundle} from '@remotion/bundler';
+import {getCompositions, renderStill, selectComposition} from '@remotion/renderer';
+import path from 'node:path';
+const sec = Number(process.argv[2]);
+const out = process.argv[3];
+const browserExecutable = process.env.REMOTION_BROWSER;
+const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+const compositions = await getCompositions(serveUrl, {browserExecutable});
+const composition = await selectComposition({serveUrl, id: compositions[0].id, browserExecutable});
+await renderStill({composition, serveUrl, frame: Math.round(sec * composition.fps), output: out, imageFormat: 'png', browserExecutable});
+console.log(out);

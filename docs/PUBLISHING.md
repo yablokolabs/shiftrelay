@@ -4,13 +4,13 @@ External actions require the operator's authorization. Nothing here is pushed, u
 
 ## Repository
 
-- [ ] Confirm the GitHub repository is **public** before submitting.
-- [ ] Confirm `.env`, `data/`, `artifacts/`, `node_modules/`, `dist/` are untracked.
-- [ ] Run a secret scan on the working tree and Git history. The key must never appear.
-- [ ] Confirm no owner name or email appears in docs, evidence or exports.
-- [ ] Confirm the supplied `assets/logo.png` and `assets/icon.png` are included.
+- [x] Public repository: <https://github.com/yablokolabs/shiftrelay>.
+- [x] `.env`, `data/`, `artifacts/`, `node_modules/`, `dist/` and `video/out/` are untracked.
+- [x] Secret scan on the working tree and Git history. The key never appears.
+- [x] No owner name or email appears in docs, evidence, exports or Git history.
+- [x] Supplied `assets/logo.png` and `assets/icon.png` are included.
 - [ ] Verify a fresh clone can run `npm install`, `cp .env.example .env`, `npm run seed`, `npm run dev`.
-- [ ] Add the public repository URL to the submission.
+- [x] Public repository URL added to the submission notes.
 
 Suggested repository description:
 
@@ -20,10 +20,10 @@ Suggested topics: `meko`, `mcp`, `yugabytedb`, `typescript`, `react`, `shared-me
 
 ## Video
 
-- [ ] Under five minutes; target 4:15. See `docs/DEMO.md`.
-- [ ] Synthetic cases visibly labeled.
-- [ ] No API key, account identity, private transcript or owner email on screen.
-- [ ] Show Friday's approval, Monday's fresh-session reuse, a withheld mismatch, and the measured comparison.
+- [x] Under five minutes: 1:08 narrated explainer, plus a 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
+- [x] Synthetic cases visibly labeled on every decision card.
+- [x] No API key, account identity, private transcript or owner email on screen.
+- [x] Shows Friday's approval, Monday's fresh-session question, a withdrawn-fix withhold and the measured comparison.
 - [ ] Upload where the operator prefers; paste the link into Devpost.
 
 ## Devpost

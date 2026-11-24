@@ -8,11 +8,13 @@ Checked 2026-11-24 before building.
 | Meko REST | **Configured and verified** | health, datapacks, artifacts |
 | Meko Projects | **Verified** | project `ShiftRelay`, folders `Field knowledge` and `Evaluation` |
 | Meko project bank | **Used** | sanitized milestone checkpoints uploaded as artifacts to the `shiftrelay` datapack |
-| VideoWright | **Not available** in this session | No binary, MCP tool or skill found. Demo storyboard prepared; ffmpeg can assemble genuine browser captures |
+| VideoWright | **Not available** in this session | No binary, MCP tool or skill found. A Remotion explainer and a genuine Chromium capture were produced instead |
+| Remotion | **Available** via the supplied `remotion-video-skill` | Six-scene 1080p explainer with scene transitions and local narration |
+| Piper TTS | **Available** locally after `uv tool install piper-tts` | `en_GB-jenny_dioco-medium` British female voice; no hosted API |
 | diagram-design | **Not available** in this session | No such skill or tool found. README diagram authored as SVG using the local architecture-diagram design guidance |
 | Playwright | **Not installed locally** | Chromium and ffmpeg were available through the session tooling for visual checks |
 | Chromium | **Available** at `/root/.hermes/tools/chromium-1208/chrome-linux64/chrome` | Headless screenshots and CDP-driven UI checks |
-| ffmpeg | **Available** | Available for demo assembly if needed |
+| ffmpeg | **Available** | UI capture assembly, final H.264/AAC encode and audio level check |
 | Local MCP server `jnaapakam` | Configured but unrelated | Not used |
 
 No external model key was used. `MODEL_PROVIDER=deterministic`; the optional OpenRouter adapter stays disabled unless the operator supplies a key.

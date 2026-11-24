@@ -1,41 +1,59 @@
 # Demo
 
-Target: **4:15**, synthetic cases labeled throughout. The submission video must be under five minutes.
+The submission cut is **1:08**, well under the five-minute limit. It is a narrated 1080p explainer built from the frozen synthetic cases. A separate 0:56 genuine UI walkthrough is preserved as supporting footage.
 
-## Storyboard
-
-| Time | Screen | What is shown |
+| Asset | Length | What it is |
 | --- | --- | --- |
-| 0:00 | Title / architecture | ShiftRelay, the tagged synthetic fixtures, and the three-role flow: intake → review → fresh session. |
-| 0:25 | Intake | Friday's P100 case. Show the transcript, firmware 2.4, prerequisites, and the Meko conversation id. |
-| 1:15 | Review queue | The proposed P109 cover fix. Click **Approve and share**. Show the named approver, the promoted shared memory, and the fix artifact. |
-| 1:50 | Review evidence | Point out that approval is a human action and that the canonical revision changed. |
-| 2:05 | Fresh session | Monday's P100 case, shared-memory arm. Start a new session. Show `recommended`, the 7 checks, retrieval source/memory id, and the distinct conversation id. |
-| 2:55 | Withheld case | P109 cutter case against the withdrawn fix. Show `withheld`, the status check, and the stale-retrieval flag if replayed. |
-| 3:25 | Mismatch case | P100 firmware 2.3 against the 2.4-only fix. Show `withheld` on firmware. |
-| 3:45 | Missing firmware | P100 with no firmware. Show `question`: the app asks instead of guessing. |
-| 4:00 | Evidence | 16 fresh-session decisions, 8/8 treatment outcomes, 0 incorrect recommendations, 7/7 control checks, duplicate approval rejected. |
-| 4:15 | End | Repo, setup command, and the synthetic-data limitation. |
+| [`docs/demo/shiftrelay-demo.mp4`](demo/shiftrelay-demo.mp4) | **1:08** | Narrated 1920×1080 explainer. Hook, problem, four-step flow, live gate decisions, measured results, close. |
+| [`docs/demo/shiftrelay-walkthrough.mp4`](demo/shiftrelay-walkthrough.mp4) | **0:56** | Genuine Chromium capture of the running UI at 1440×900. Silent, burned-in captions, including a live approval. |
+| [`docs/demo/poster.jpg`](demo/poster.jpg) | — | Poster frame from the gate scene. |
 
-## Recording notes
+Both use synthetic printer cases only. No API key, account identity, owner email or private transcript appears on screen.
 
-- Record only the seeded synthetic fixtures. Do not show `.env`, the Meko portal key screen, account identity, or any private transcript.
-- The proposed P109 cover fix exists so the approval action can be recorded live. It is outside the evaluation scenarios.
+## Explainer storyboard
+
+| Time | Chapter | What is shown |
+| --- | --- | --- |
+| 0:00 | Hook | Friday's P100 handoff, the approved fuser fix, Monday's missing firmware, and the resulting **question**. |
+| 0:07 | The problem | Fixes leave with the shift; firmware changes the answer; retrieval is not approval. |
+| 0:18 | How it works | Capture → technician approval → fresh-session retrieval → deterministic gate. The gate checks status, version, model and firmware. |
+| 0:36 | The gate | Side-by-side synthetic cases: missing firmware asks; a withdrawn fix is withheld even though retrieval returned it. |
+| 0:50 | Measured | 16 fresh-session decisions, 8/8 matched expectations, 0 incorrect recommendations, 7/7 control checks. Includes the live withdrawal negative result. |
+| 1:01 | Close | Repository and the one-line promise. |
+
+Narration is six short lines, one per scene, spoken locally with Piper (`en_GB-jenny_dioco-medium`, British female) at scene starts. No hosted TTS or external model key is used.
+
+## Production
+
+The video source is in [`video/`](../video/):
+
+- Remotion `4.0.534`, React 18, 1920×1080 at 30 fps.
+- Six scenes in `video/src/scenes/`, timed in `video/src/storyboard.tsx`.
+- Brand palette and supplied logo; no footer, powered-by strip or attribution.
+- `video/public/narration.mp3` is the committed voice track; `video/narration.json` holds the script and scene windows.
+- Preview stills were reviewed before rendering; the final MP4 is H.264 with AAC audio.
+
+```bash
+cd video
+npm install
+npm run typecheck
+npm run stills -- review 5.6 16 34 46 56 64
+REMOTION_BROWSER=/path/to/chrome npm run render
+```
+
+`REMOTION_BROWSER` is only needed where Remotion cannot download its own browser.
+
+## Genuine UI walkthrough
+
+The earlier capture remains useful as proof that the console runs. It shows the actual intake transcript, approval queue, fresh-session decision trace and evidence panel from the seeded build, including the live promotion of the proposed P109 cover fix.
+
+Recording notes:
+
+- Record only the seeded synthetic fixtures. Do not show `.env`, the Meko portal key screen, account identity or any private transcript.
 - If approval is recorded live, wait for `memory_promote` confirmation before moving on.
-- Keep the video under 5:00. No decorative footer or powered-by strip appears in the UI.
+- Keep any recording under 5:00. The delivered explainer is 1:08.
 
-## Tool status
-
-**VideoWright was not available** in this session (no binary, MCP tool or skill). The fallback is genuine Chromium screen capture plus ffmpeg, with burned-in captions.
-
-- File: `docs/demo/shiftrelay-demo.mp4`
-- Duration: **0:56** (1440×900, 30 fps, 2.1 MB, no audio)
-- Source: actual UI captures against the local production build, including a live approval that promoted a proposed fix
-- Captions: burned in with ffmpeg/ASS; no secrets, owner identity or private data on screen
-
-The current cut is intentionally short. The 4:15 storyboard above can be narrated over the same footage for submission if the operator wants the full timing.
-
-## Reproduction commands
+## Reproduction
 
 ```bash
 npm run seed

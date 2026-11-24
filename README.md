@@ -99,6 +99,7 @@ fixtures/        Frozen synthetic printer cases, fixes and static manual
 scripts/         seed, smoke, evaluate, checkpoint, dev
 tests/           Deterministic unit tests
 docs/            Progress, capabilities, evaluation, demo, publishing, evidence
+video/           Remotion explainer source and narration track
 assets/          Supplied ShiftRelay logo and icon
 ```
 
@@ -120,8 +121,11 @@ assets/          Supplied ShiftRelay logo and icon
 
 ## Demo and submission
 
-- Video (0:56, silent, captioned): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4)
-- Demo storyboard and recording notes: [`docs/DEMO.md`](docs/DEMO.md)
+[![ShiftRelay demo](docs/demo/poster.jpg)](docs/demo/shiftrelay-demo.mp4)
+
+- Explainer (1:08, narrated, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4)
+- Genuine UI walkthrough (0:56, silent, captioned): [`docs/demo/shiftrelay-walkthrough.mp4`](docs/demo/shiftrelay-walkthrough.mp4)
+- Demo storyboard, narration and recording notes: [`docs/DEMO.md`](docs/DEMO.md)
 - Meko contract and observed operations: [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md)
 - Unsupported features: [`docs/UNSUPPORTED.md`](docs/UNSUPPORTED.md)
 - Milestones and checkpoints: [`docs/PROGRESS.md`](docs/PROGRESS.md)

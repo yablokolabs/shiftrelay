@@ -49,7 +49,7 @@ Date: 2026-11-24 · Commit: `4bd905e`
 - Evidence: `docs/evidence/evaluation.json`, `docs/evidence/evaluation.md`, `docs/EVIDENCE.md`.
 - UI: intake, technician review, fresh-session decision trace, evidence panel. No decorative footer or powered-by strip.
 - README diagram: hand-authored SVG (`docs/architecture.svg`); `diagram-design` was not available in this session.
-- Demo: `docs/demo/shiftrelay-demo.mp4` (0:56, 1440×900, captioned) assembled from real Chromium captures with ffmpeg because VideoWright was not available. The recording includes a live approval that promoted the proposed P109 cover fix. Storyboard: `docs/DEMO.md`.
+- Initial demo: 0:56 silent captioned capture assembled from real Chromium footage; preserved as `docs/demo/shiftrelay-walkthrough.mp4` after M4. It includes a live approval that promoted the proposed P109 cover fix.
 - Added `case-008-p109-cover` and a proposed P109 fix so the review queue has a live pending item for the demo; it is outside the scored evaluation scenarios.
 - Sanitization: credentials, emails and owner identity removed from evidence. The owner identity found in `datapack_describe` is not reused anywhere.
 - Project-bank checkpoints: sanitized `docs/PROGRESS.md` and evidence uploaded to the `shiftrelay` datapack as artifacts; hashes in `docs/CHECKPOINTS.md`.
@@ -65,6 +65,16 @@ See `docs/EVALUATION.md`. Negative results are preserved: live retrieval after w
 - Token counts are not exposed; both arms use the deterministic responder.
 - Synthetic fixtures only.
 
+## M4 — narrated explainer and public repository (complete)
+
+Date: 2026-11-24
+
+- Built a **1:08** 1920×1080 Remotion explainer with six scenes: hook, problem, four-step flow, gate decisions, measured results, close. Source: `video/`.
+- Narration is local Piper (`en_GB-jenny_dioco-medium`, British female), six lines aligned to scene starts; no hosted TTS or external model key.
+- Preserved the genuine 0:56 UI walkthrough as `docs/demo/shiftrelay-walkthrough.mp4`; submission cut is `docs/demo/shiftrelay-demo.mp4` (21 MB, H.264/AAC).
+- Every decision card is labeled synthetic; no owner identity, credential or attribution footer appears in the video or docs.
+- Updated README, demo storyboard, tools and built-with docs; public repository at <https://github.com/yablokolabs/shiftrelay>.
+
 ### Next action
 
-Prepare the public repository and under-five-minute video when the operator authorizes external publishing. Do not push or upload without that authorization.
+Submission-ready. Optional: upload the 1:08 cut to the operator's preferred host and link it from the Devpost entry.
