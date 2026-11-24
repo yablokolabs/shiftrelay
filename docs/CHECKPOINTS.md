@@ -3,3 +3,12 @@
 | --- | --- | --- | --- |
 | 2026-11-24T16:36:35.663Z | project-bank-shiftrelay/2026-11-24-PROGRESS.md | 8775111379c084b5fdc9b135d8d703d71e400bc5fe9bbc2550b737189ca32c40 | 1585 |
 | 2026-11-24T16:36:36.091Z | project-bank-shiftrelay/2026-11-24-m0-smoke.json | 2b0f1ae33a07eb7c44d5c8dcf2a0020dd9e8847ff3da9ed3c15de18ce5b082ea | 2609 |
+| 2026-11-24T17:13:42.954Z | project-bank-shiftrelay/2026-11-24-README.md | d9de718e2e939cd2b009ca7ba08f45be2a04daed8041776b8a775cfee01f5765 | 7818 |
+| 2026-11-24T17:13:43.382Z | project-bank-shiftrelay/2026-11-24-PROGRESS.md | f9db547b60aee87c0b4e8aba35ac5f31f105bf1a786aa5b50ee14379c62d1e88 | 5185 |
+| 2026-11-24T17:13:43.504Z | project-bank-shiftrelay/2026-11-24-CAPABILITIES.md | 545ebb4843a1930b5501ddf076577e23518ba16e46b4f7c1ac57eef899a05bb0 | 5014 |
+| 2026-11-24T17:13:43.623Z | project-bank-shiftrelay/2026-11-24-UNSUPPORTED.md | cec1642e43cb3931aca329ea87db1c44cfa7aa541996c734d8283209117aed83 | 2377 |
+| 2026-11-24T17:13:43.902Z | project-bank-shiftrelay/2026-11-24-architecture.svg | 915853a279496633dcc30da36bbcba6fd3409a88e5d7e53269d07c86ddc272b9 | 13072 |
+| 2026-11-24T17:13:44.126Z | project-bank-shiftrelay/2026-11-24-evaluation.json | 0293cfd252a4aa9e6327870fb35637136eb73ad31c602a791bf59084fad874a8 | 23988 |
+| 2026-11-24T17:13:44.253Z | project-bank-shiftrelay/2026-11-24-evaluation.md | 93171cb93cd9a6ead159fcba4d30c244736d56de372735d9a60a0c1f9aa34e61 | 3464 |
+| 2026-11-24T17:13:44.374Z | project-bank-shiftrelay/2026-11-24-m0-smoke.json | 2b0f1ae33a07eb7c44d5c8dcf2a0020dd9e8847ff3da9ed3c15de18ce5b082ea | 2609 |
+| 2026-11-24T17:13:44.495Z | project-bank-shiftrelay/2026-11-24-meko-capabilities.json | 2f19f35bb71ddb6dc46a96ba1e4166b823316c83fbe3998a7e4cab5b9706e836 | 2587 |

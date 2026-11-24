@@ -40,7 +40,7 @@ Date: 2026-11-24 · Commit: `0e70730`
 
 ## M3 — evaluation, demo and submission materials (complete)
 
-Date: 2026-11-24
+Date: 2026-11-24 · Commit: `1971c54`
 
 - Evaluation: 8 scenarios × 2 arms = **16 decisions**, all 16 sessions distinct.
 - Treatment 8/8 correct, 2 recommended, 0 incorrect recommendations, 1 question, 5 withheld.
