@@ -105,28 +105,14 @@
 
   <!-- arrows -->
   <path d="M248 218 C 280 218, 292 200, 322 200" fill="none" stroke="#7dd3c7" stroke-width="1.4" marker-end="url(#arrow)"/>
-  <text x="254" y="200" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">case + transcript</text>
-
   <path d="M248 470 C 280 470, 292 500, 322 500" fill="none" stroke="#f4a21a" stroke-width="1.4" marker-end="url(#arrowg)"/>
-  <text x="248" y="522" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">decision back</text>
-
   <path d="M475 352 L 475 332" fill="none" stroke="#34d399" stroke-width="1.3" marker-end="url(#arrow)"/>
   <path d="M475 468 L 475 448" fill="none" stroke="#34d399" stroke-width="1.3" marker-end="url(#arrow)"/>
-  <text x="484" y="462" fill="#34d399" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">resolve status at decision time</text>
-
   <path d="M628 296 C 662 296, 670 268, 702 268" fill="none" stroke="#a78bfa" stroke-width="1.4" marker-end="url(#arrowv)"/>
-  <text x="638" y="288" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">capture conversation + memory</text>
-
   <path d="M628 370 C 662 370, 670 356, 702 356" fill="none" stroke="#f4a21a" stroke-width="1.5" marker-end="url(#arrowg)"/>
   <path d="M702 376 C 670 376, 662 386, 628 386" fill="none" stroke="#7dd3c7" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="640" y="340" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">approve → promote</text>
-  <text x="636" y="402" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">retrieve candidate</text>
-
-  <path d="M248 168 C 280 150, 640 140, 702 170" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="520" y="146" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">same static manual in both evaluation arms</text>
-
   <!-- legend -->
   <rect x="40" y="590" width="1120" height="46" rx="8" fill="#0b1729" stroke="#1e293b"/>
   <text x="56" y="609" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">VERIFIED  MCP initialize · tools/list (57) · conversation_create/add_message · memory_add/search · memory_promote · knowledgebase_search · artifact_put/get · REST health/datapacks</text>
-  <text x="56" y="625" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">EVIDENCE  separate conversation ids · approval event · retrieval source · stale-retrieval flag · final checks · outcome</text>
+  <text x="56" y="625" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">EVIDENCE  separate conversation ids · approval event · retrieval source · stale-retrieval flag · final checks · outcome · same manual in both arms</text>
 </svg>

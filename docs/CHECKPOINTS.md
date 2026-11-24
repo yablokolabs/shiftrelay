@@ -12,3 +12,7 @@
 | 2026-11-24T17:13:44.253Z | project-bank-shiftrelay/2026-11-24-evaluation.md | 93171cb93cd9a6ead159fcba4d30c244736d56de372735d9a60a0c1f9aa34e61 | 3464 |
 | 2026-11-24T17:13:44.374Z | project-bank-shiftrelay/2026-11-24-m0-smoke.json | 2b0f1ae33a07eb7c44d5c8dcf2a0020dd9e8847ff3da9ed3c15de18ce5b082ea | 2609 |
 | 2026-11-24T17:13:44.495Z | project-bank-shiftrelay/2026-11-24-meko-capabilities.json | 2f19f35bb71ddb6dc46a96ba1e4166b823316c83fbe3998a7e4cab5b9706e836 | 2587 |
+| 2026-11-24T17:15:53.912Z | project-bank-shiftrelay/2026-11-24-PROGRESS.md | f9db547b60aee87c0b4e8aba35ac5f31f105bf1a786aa5b50ee14379c62d1e88 | 5185 |
+| 2026-11-24T17:15:54.337Z | project-bank-shiftrelay/2026-11-24-EVALUATION.md | 050b6f2e144109017f885883317d345846d93b1811aa7077414409831dd1a81c | 5109 |
+| 2026-11-24T17:15:54.463Z | project-bank-shiftrelay/2026-11-24-PUBLISHING.md | 24911cdfb9b91c8da6ac800a844cd474cae98f1ce1db7a0581ce2fb0ab5cef9d | 2318 |
+| 2026-11-24T17:15:54.600Z | project-bank-shiftrelay/2026-11-24-architecture.svg | 3db7d37527f59cb190785280a7b6b5c9a418cc8f47ec3de4cd7be64ece4f762e | 11951 |
