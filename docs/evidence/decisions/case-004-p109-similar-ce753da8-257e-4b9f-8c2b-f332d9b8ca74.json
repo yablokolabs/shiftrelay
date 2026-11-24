@@ -1,0 +1,38 @@
+{
+  "decisionId": "ce753da8-257e-4b9f-8c2b-f332d9b8ca74",
+  "caseId": "case-004-p109-similar",
+  "sessionId": "1b0d32d310a0bb96f283a6da57636526",
+  "conversationId": "1b0d32d310a0bb96f283a6da57636526",
+  "retrieved": {
+    "sessionId": "1b0d32d310a0bb96f283a6da57636526",
+    "conversationId": "1b0d32d310a0bb96f283a6da57636526",
+    "source": "none",
+    "fixId": null,
+    "fixVersion": null,
+    "memoryId": null,
+    "distance": null,
+    "rerankScore": null,
+    "retrievedAt": "2026-11-24T16:49:36.573Z"
+  },
+  "canonical": null,
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "fail",
+      "detail": "No shared fix was retrieved from Meko."
+    }
+  ],
+  "outcome": "no_fix",
+  "headline": "No approved fix retrieved",
+  "answer": "No approved shared fix applies to P109 (firmware 1.8). Follow the static P-series manual: confirm the model and firmware, print the built-in test pattern, check media and ribbon, run the print-head cleaning cycle, and record the result. If faint print or the mechanical symptom continues, attach the test pattern, page count, and steps tried, then escalate to the next shift.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T16:49:36.573Z",
+  "latencyMs": 1347,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

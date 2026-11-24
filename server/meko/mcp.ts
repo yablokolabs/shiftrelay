@@ -81,6 +81,7 @@ export class MekoSession {
   readonly agentId: string;
   readonly datapackId: string;
   conversationId = "";
+  calls = 0;
 
   constructor(label: string, agentId: string, datapackId: string) {
     this.label = label;
@@ -89,6 +90,7 @@ export class MekoSession {
   }
 
   async initialize(): Promise<void> {
+    this.calls += 1;
     const response = await this.post({
       jsonrpc: "2.0",
       id: this.nextId++,
@@ -119,6 +121,7 @@ export class MekoSession {
   }
 
   async call(name: string, args: Record<string, unknown>): Promise<unknown> {
+    this.calls += 1;
     const response = await this.post({
       jsonrpc: "2.0",
       id: this.nextId++,
@@ -136,6 +139,7 @@ export class MekoSession {
   }
 
   async listTools(): Promise<unknown[]> {
+    this.calls += 1;
     const response = await this.post({
       jsonrpc: "2.0",
       id: this.nextId++,

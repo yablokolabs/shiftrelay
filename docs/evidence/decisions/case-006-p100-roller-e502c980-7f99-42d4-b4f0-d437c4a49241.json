@@ -1,0 +1,38 @@
+{
+  "decisionId": "e502c980-7f99-42d4-b4f0-d437c4a49241",
+  "caseId": "case-006-p100-roller",
+  "sessionId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+  "conversationId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+  "retrieved": {
+    "sessionId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+    "conversationId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+    "source": "none",
+    "fixId": null,
+    "fixVersion": null,
+    "memoryId": null,
+    "distance": null,
+    "rerankScore": null,
+    "retrievedAt": "2026-11-24T17:00:22.363Z"
+  },
+  "canonical": null,
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "fail",
+      "detail": "No shared fix was retrieved from Meko."
+    }
+  ],
+  "outcome": "no_fix",
+  "headline": "No approved fix retrieved",
+  "answer": "No approved shared fix applies to P100 (firmware 2.4). Follow the static P-series manual: confirm the model and firmware, print the built-in test pattern, check media and ribbon, run the print-head cleaning cycle, and record the result. If faint print or the mechanical symptom continues, attach the test pattern, page count, and steps tried, then escalate to the next shift.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:00:22.363Z",
+  "latencyMs": 770,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

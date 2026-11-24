@@ -1,0 +1,68 @@
+{
+  "milestone": "M1",
+  "synthetic": true,
+  "seeded_at": "2026-11-24T16:46:48.891Z",
+  "project": {
+    "id": "d26c8008-3b93-4f6a-b0da-5012328cd41e",
+    "name": "ShiftRelay",
+    "folders": [
+      "Field knowledge",
+      "Evaluation"
+    ]
+  },
+  "datapacks": {
+    "primary": "f28dc489-57a2-4b04-aab0-5d6689cba714",
+    "baseline": "94bf7686-4d95-41a6-9f0c-b778dbdbe94f"
+  },
+  "cases": 7,
+  "fixes": [
+    {
+      "fixId": "fix-p100-fuser-001",
+      "version": 1,
+      "status": "approved",
+      "approver": "R. Chen (synthetic technician)",
+      "sharedMemoryId": "2bb760e5-c270-4ec2-8c5d-eaeb3eb8baca",
+      "artifactHash": "ae9e552f744ff0d101b5ff6f1b5e67320644a9291fd25914a58e17abdaf9ba06"
+    },
+    {
+      "fixId": "fix-p109-cutter-002",
+      "version": 1,
+      "status": "withdrawn",
+      "approver": "R. Chen (synthetic technician)",
+      "sharedMemoryId": "cb1dcb26-9c7e-4aba-b608-d4706224209e",
+      "artifactHash": "153544295428e74329edc26c767f7a22c6b87e08075b1f7117b2322e183767fc"
+    },
+    {
+      "fixId": "fix-p100-roller-003",
+      "version": 1,
+      "status": "superseded",
+      "approver": "R. Chen (synthetic technician)",
+      "sharedMemoryId": "57691542-5bc6-40a3-937d-769e948542f5",
+      "artifactHash": "7395aa2fa4da1597200084d45b11dc18ba50a97b4951459035d3e7c6e7cdd587"
+    },
+    {
+      "fixId": "fix-p100-roller-003",
+      "version": 2,
+      "status": "approved",
+      "approver": "R. Chen (synthetic technician)",
+      "sharedMemoryId": "3cb7bd45-9927-4696-a9f1-ae5fd3b4655f",
+      "artifactHash": "eadf8ba6153d04b61e46a6ddbaf3442f51254ebe0841b80148bc934874d3d67c"
+    }
+  ],
+  "retrieval": {
+    "baseline_fix_found": false,
+    "treatment_fix_found": true,
+    "treatment_ref": {
+      "sessionId": "4a67e0524de74418fb986e758e462bf8",
+      "conversationId": "4a67e0524de74418fb986e758e462bf8",
+      "source": "shared_knowledge",
+      "fixId": "fix-p100-fuser-001",
+      "fixVersion": 1,
+      "memoryId": "000f3a29-a096-4f18-96eb-d07b7464cf5b",
+      "distance": 1.0183797728171173,
+      "rerankScore": 0.999433199657753,
+      "retrievedAt": "2026-11-24T16:46:48.890Z"
+    }
+  },
+  "note": "The baseline datapack has the same manual artifact but no promoted fix. The primary datapack is the treatment arm."
+}

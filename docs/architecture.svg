@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="ShiftRelay architecture: field shifts, ShiftRelay app, and Meko shared context">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14233f" stroke-width="0.6"/>
+    </pattern>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#7dd3c7"/>
+    </marker>
+    <marker id="arrowv" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#a78bfa"/>
+    </marker>
+    <marker id="arrowg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f4a21a"/>
+    </marker>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="660" fill="#071228"/>
+  <rect width="1200" height="660" fill="url(#grid)"/>
+
+  <text x="40" y="48" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="700" letter-spacing="-0.5">ShiftRelay</text>
+  <text x="40" y="72" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.6">THE NEXT SHIFT STARTS WITH WHAT THE LAST SHIFT LEARNED</text>
+  <text x="1160" y="48" text-anchor="end" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10">synthetic fixtures · verified MCP 2025-06-18</text>
+
+  <!-- boundaries -->
+  <rect x="40" y="112" width="226" height="454" rx="14" fill="#0b1729" fill-opacity="0.55" stroke="#334155" stroke-dasharray="6,4"/>
+  <text x="58" y="138" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1.5">01  FIELD SHIFTS</text>
+
+  <rect x="304" y="112" width="342" height="454" rx="14" fill="#062a2a" fill-opacity="0.28" stroke="#0f9d8f" stroke-dasharray="8,4"/>
+  <text x="322" y="138" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1.5">02  SHIFTRELAY APP</text>
+
+  <rect x="684" y="112" width="476" height="454" rx="14" fill="#1b1233" fill-opacity="0.4" stroke="#8b5cf6" stroke-dasharray="8,4"/>
+  <text x="702" y="138" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" letter-spacing="1.5">03  MEKO SHARED CONTEXT LAYER</text>
+
+  <!-- field boxes -->
+  <rect x="58" y="168" width="190" height="98" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="1.4"/>
+  <text x="72" y="192" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">Friday · intake</text>
+  <text x="72" y="212" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">P100 · firmware 2.4</text>
+  <text x="72" y="228" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">faint labels after 25 pages</text>
+  <text x="72" y="248" fill="#22d3ee" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">synthetic transcript captured</text>
+
+  <rect x="58" y="430" width="190" height="108" rx="8" fill="#0f172a" stroke="#22d3ee" stroke-width="1.4"/>
+  <text x="72" y="454" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">Monday · fresh session</text>
+  <text x="72" y="474" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">new initialize + conversation</text>
+  <text x="72" y="490" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">firmware not recorded</text>
+  <text x="72" y="510" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">decision: ask for firmware</text>
+  <text x="72" y="526" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">recommend · withhold · ask</text>
+
+  <!-- app boxes -->
+  <rect x="322" y="164" width="306" height="74" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.4"/>
+  <text x="336" y="188" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">React console</text>
+  <text x="336" y="206" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">intake · review queue · fresh session · evidence</text>
+  <text x="336" y="224" fill="#34d399" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">no footer · no powered-by strip</text>
+
+  <rect x="322" y="258" width="306" height="74" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.4"/>
+  <text x="336" y="282" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">Node server adapter</text>
+  <text x="336" y="300" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">MCP client · Meko REST · secrets server-side</text>
+  <text x="336" y="318" fill="#34d399" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">one initialize per session</text>
+
+  <rect x="322" y="352" width="306" height="96" rx="8" fill="#0f172a" stroke="#f4a21a" stroke-width="1.6"/>
+  <text x="336" y="376" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">Deterministic applicability gate</text>
+  <text x="336" y="394" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">retrieved → canonical status → current version</text>
+  <text x="336" y="410" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">model → firmware → prerequisites</text>
+  <text x="336" y="430" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">withdrawn fix stays withheld even if retrieved</text>
+
+  <rect x="322" y="468" width="306" height="76" rx="8" fill="#0f172a" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="336" y="492" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">Canonical control store</text>
+  <text x="336" y="510" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">fix id · version · status · approver · supersedes</text>
+  <text x="336" y="528" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">atomic writes · expected-revision checks</text>
+
+  <!-- meko boxes -->
+  <rect x="702" y="158" width="440" height="54" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="716" y="181" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700">MCP endpoint</text>
+  <text x="716" y="199" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">mcp.mekodata.ai/mcp · stateless per request · 57 tools discovered</text>
+
+  <rect x="702" y="232" width="212" height="72" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="716" y="254" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">Conversations</text>
+  <text x="716" y="272" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">conversation_create</text>
+  <text x="716" y="288" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">conversation_add_message</text>
+
+  <rect x="930" y="232" width="212" height="72" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="944" y="254" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">Memories</text>
+  <text x="944" y="272" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">memory_add</text>
+  <text x="944" y="288" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">memory_search</text>
+
+  <rect x="702" y="320" width="212" height="82" rx="8" fill="#0f172a" stroke="#f4a21a" stroke-width="1.4"/>
+  <text x="716" y="342" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">Shared knowledge</text>
+  <text x="716" y="360" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">memory_promote (approval)</text>
+  <text x="716" y="376" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">knowledgebase_search</text>
+  <text x="716" y="392" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">cannot un-promote</text>
+
+  <rect x="930" y="320" width="212" height="82" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.2"/>
+  <text x="944" y="342" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">Artifacts</text>
+  <text x="944" y="360" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">artifact_put</text>
+  <text x="944" y="376" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">artifact_get</text>
+  <text x="944" y="392" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">SHA-256 content-addressed</text>
+
+  <rect x="702" y="428" width="440" height="72" rx="8" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="716" y="451" fill="#f8fafc" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700">YugabyteDB-backed managed store</text>
+  <text x="716" y="469" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">Meko persistence foundation · accessed through Meko only</text>
+  <text x="716" y="485" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">no YSQL connection string exposed to this API key</text>
+
+  <!-- arrows -->
+  <path d="M248 218 C 280 218, 292 200, 322 200" fill="none" stroke="#7dd3c7" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="254" y="200" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">case + transcript</text>
+
+  <path d="M248 470 C 280 470, 292 500, 322 500" fill="none" stroke="#f4a21a" stroke-width="1.4" marker-end="url(#arrowg)"/>
+  <text x="248" y="522" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">decision back</text>
+
+  <path d="M475 352 L 475 332" fill="none" stroke="#34d399" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <path d="M475 468 L 475 448" fill="none" stroke="#34d399" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <text x="484" y="462" fill="#34d399" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">resolve status at decision time</text>
+
+  <path d="M628 296 C 662 296, 670 268, 702 268" fill="none" stroke="#a78bfa" stroke-width="1.4" marker-end="url(#arrowv)"/>
+  <text x="638" y="288" fill="#c4b5fd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">capture conversation + memory</text>
+
+  <path d="M628 370 C 662 370, 670 356, 702 356" fill="none" stroke="#f4a21a" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <path d="M702 376 C 670 376, 662 386, 628 386" fill="none" stroke="#7dd3c7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="640" y="340" fill="#f4a21a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">approve → promote</text>
+  <text x="636" y="402" fill="#7dd3c7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">retrieve candidate</text>
+
+  <path d="M248 168 C 280 150, 640 140, 702 170" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="520" y="146" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8">same static manual in both evaluation arms</text>
+
+  <!-- legend -->
+  <rect x="40" y="590" width="1120" height="46" rx="8" fill="#0b1729" stroke="#1e293b"/>
+  <text x="56" y="609" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">VERIFIED  MCP initialize · tools/list (57) · conversation_create/add_message · memory_add/search · memory_promote · knowledgebase_search · artifact_put/get · REST health/datapacks</text>
+  <text x="56" y="625" fill="#64748b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5">EVIDENCE  separate conversation ids · approval event · retrieval source · stale-retrieval flag · final checks · outcome</text>
+</svg>

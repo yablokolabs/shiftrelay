@@ -1,0 +1,76 @@
+{
+  "decisionId": "e544480e-a9d2-48a8-973e-55d50fb997ff",
+  "caseId": "case-002-monday-p100",
+  "sessionId": "f6ab9e096ee681a5636de6154de5c22d",
+  "conversationId": "f6ab9e096ee681a5636de6154de5c22d",
+  "retrieved": {
+    "sessionId": "f6ab9e096ee681a5636de6154de5c22d",
+    "conversationId": "f6ab9e096ee681a5636de6154de5c22d",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-fuser-001",
+    "fixVersion": 1,
+    "memoryId": "000f3a29-a096-4f18-96eb-d07b7464cf5b",
+    "distance": 1.0170867995907047,
+    "rerankScore": 0.9997049615921172,
+    "retrievedAt": "2026-11-24T17:00:06.321Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-fuser-001",
+    "version": 1,
+    "status": "approved",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:35.345Z",
+    "currentVersion": 1,
+    "revision": 5
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "pass",
+      "detail": "Approved by R. Chen (synthetic technician)."
+    },
+    {
+      "id": "version",
+      "label": "Version currency",
+      "outcome": "pass",
+      "detail": "v1 is the current version."
+    },
+    {
+      "id": "model",
+      "label": "Equipment model",
+      "outcome": "pass",
+      "detail": "Model P100 matches."
+    },
+    {
+      "id": "firmware",
+      "label": "Firmware version",
+      "outcome": "question",
+      "detail": "Case does not report a firmware version."
+    }
+  ],
+  "outcome": "question",
+  "headline": "Ask for the firmware version",
+  "answer": "Which firmware version is the printer running? The fix is only approved for specific firmware.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:00:06.322Z",
+  "latencyMs": 1025,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

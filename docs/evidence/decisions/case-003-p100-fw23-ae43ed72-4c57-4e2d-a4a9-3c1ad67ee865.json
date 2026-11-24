@@ -1,0 +1,76 @@
+{
+  "decisionId": "ae43ed72-4c57-4e2d-a4a9-3c1ad67ee865",
+  "caseId": "case-003-p100-fw23",
+  "sessionId": "d3a54a8ea7cf1864887356f1aecfddfd",
+  "conversationId": "d3a54a8ea7cf1864887356f1aecfddfd",
+  "retrieved": {
+    "sessionId": "d3a54a8ea7cf1864887356f1aecfddfd",
+    "conversationId": "d3a54a8ea7cf1864887356f1aecfddfd",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-fuser-001",
+    "fixVersion": 1,
+    "memoryId": "3562e618-d88c-44be-b158-6b7b00c789a1",
+    "distance": 1.0157339764455182,
+    "rerankScore": 0.9997464728573864,
+    "retrievedAt": "2026-11-24T17:00:09.290Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-fuser-001",
+    "version": 1,
+    "status": "approved",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:35.345Z",
+    "currentVersion": 1,
+    "revision": 5
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "pass",
+      "detail": "Approved by R. Chen (synthetic technician)."
+    },
+    {
+      "id": "version",
+      "label": "Version currency",
+      "outcome": "pass",
+      "detail": "v1 is the current version."
+    },
+    {
+      "id": "model",
+      "label": "Equipment model",
+      "outcome": "pass",
+      "detail": "Model P100 matches."
+    },
+    {
+      "id": "firmware",
+      "label": "Firmware applicability",
+      "outcome": "fail",
+      "detail": "Firmware 2.3.0 is not in the approved set (2.4)."
+    }
+  ],
+  "outcome": "withheld",
+  "headline": "Withheld: firmware mismatch",
+  "answer": "This fix is approved for firmware 2.4, not 2.3. Do not apply it.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:00:09.291Z",
+  "latencyMs": 1090,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

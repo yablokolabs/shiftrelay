@@ -1,0 +1,89 @@
+[
+  {
+    "caseId": "case-001-friday-p100",
+    "title": "Dock 3 — faint labels after a short run",
+    "model": "P100",
+    "firmware": "2.4",
+    "site": "Synthetic distribution center, Dock 3",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll and returns after the printer rests.",
+    "prerequisitesMet": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "transcript": [
+      { "role": "technician", "text": "Friday 16:40. P100 on firmware 2.4. Labels go faint after about 25 pages, then recover after a rest. Media is the usual lot." },
+      { "role": "intake", "text": "Captured model P100, firmware 2.4, faint print after 20-30 pages. Test pattern attached to the synthetic case." },
+      { "role": "technician", "text": "Ran the cleaning cycle, no change. Fuser access door opens and the printer has been idle for 10 minutes." }
+    ]
+  },
+  {
+    "caseId": "case-002-monday-p100",
+    "title": "Dock 1 — same fading symptom, firmware not recorded",
+    "model": "P100",
+    "firmware": null,
+    "site": "Synthetic distribution center, Dock 1",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll.",
+    "prerequisitesMet": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "transcript": [
+      { "role": "technician", "text": "Monday 07:10. P100 with the same fading symptom as Friday. I did not record the firmware before the printer went back into service." },
+      { "role": "intake", "text": "Firmware is missing. Do not recommend a firmware-scoped fix until it is confirmed." }
+    ]
+  },
+  {
+    "caseId": "case-003-p100-fw23",
+    "title": "Dock 2 — faint labels on older firmware",
+    "model": "P100",
+    "firmware": "2.3",
+    "site": "Synthetic distribution center, Dock 2",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll.",
+    "prerequisitesMet": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "transcript": [
+      { "role": "technician", "text": "P100 on firmware 2.3 shows the same fading symptom. We have not updated this unit." }
+    ]
+  },
+  {
+    "caseId": "case-004-p109-similar",
+    "title": "Returns desk — similar fading on a different model",
+    "model": "P109",
+    "firmware": "1.8",
+    "site": "Synthetic returns desk",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll.",
+    "prerequisitesMet": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "transcript": [
+      { "role": "technician", "text": "P109 at the returns desk looks similar: faint labels after a short run. The P100 fix may be circulating; I have not applied it." }
+    ]
+  },
+  {
+    "caseId": "case-005-p109-cutter",
+    "title": "Packing line — cutter jams recurring",
+    "model": "P109",
+    "firmware": "1.8",
+    "site": "Synthetic packing line",
+    "symptom": "Cutter jams after 200 sheets. Debris clears but the jam returns on the next run.",
+    "prerequisitesMet": ["Cutter path cleared", "Power removed"],
+    "transcript": [
+      { "role": "technician", "text": "P109 firmware 1.8. Cutter jams after roughly 200 sheets. Cleared the path and removed debris; it returned on the next run." }
+    ]
+  },
+  {
+    "caseId": "case-006-p100-roller",
+    "title": "Dock 4 — roller slips on the second pass",
+    "model": "P100",
+    "firmware": "2.4",
+    "site": "Synthetic distribution center, Dock 4",
+    "symptom": "Media roller slips on the second pass. Labels skew after the roller warms up.",
+    "prerequisitesMet": ["Media path clean"],
+    "transcript": [
+      { "role": "technician", "text": "P100 firmware 2.4. The media roller slips on the second pass once it warms up. Media path is clean." }
+    ]
+  },
+  {
+    "caseId": "case-007-duplicate",
+    "title": "Dock 5 — duplicate approval check",
+    "model": "P100",
+    "firmware": "2.4",
+    "site": "Synthetic distribution center, Dock 5",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll.",
+    "prerequisitesMet": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "transcript": [
+      { "role": "technician", "text": "P100 firmware 2.4 with the same fading symptom. This case is used to test duplicate approval handling." }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "probe": "memory promotion and fresh-session recall",
+  "checked_at": "2026-11-24T16:38:42.384Z",
+  "synthetic": true,
+  "datapack_id": "f28dc489-57a2-4b04-aab0-5d6689cba714",
+  "marker": "SHIFTRELAY-PROBE-1795538309236",
+  "conversation_id": "b86099748b9199bc378ddcb858ad99b8",
+  "fresh_conversation_id": "9f146ff0d3066f6ac1c303707ba59050",
+  "memory_id": "8056483d-f341-49f8-83d1-536830207a47",
+  "promote_result": {
+    "inserted_ids": [
+      "8056483d-f341-49f8-83d1-536830207a47"
+    ],
+    "updated_ids": [],
+    "not_found_ids": []
+  },
+  "promote_error": null,
+  "context_found": false,
+  "knowledgebase_found": true,
+  "context_digest": "{\"results\":{\"knowledge_base\":[],\"memory\":[{\"id\":\"4c80736b-cd79-4fe9-bd03-78e0aa8c3b6c\",\"memory\":\"SHIFTRELAY-M0-P100-FUSER P100 firmware 2.4 faint print after 20-30 pages; fuser pressure reset restored darkness. Proposed learning only, not yet approved.\",\"hash\":\"97ef61f01e2cbbed835e27fe3c50a91e\",\"metadata\":{\"state\":\"proposed\",\"fix_id\":\"fix-p100-fuser-001\",\"case_id\":\"case-m0-smoke-001\",\"meko_datapack_id\":\"f28dc489-57a2-4b04-aab0-5d6689cba714\"},\"score\":0.37375498040582505,\"created_at\":\"2026-11-24T16:36:32.891975+00:00\",\"updated_at\":\"2026-11-24T16:36:32.891975+00:00\",\"raw_similarity_score\":0.7326483398194457,\"user_id\":\"2d0d392d-da01-4f6f-b993-5b1f52298233\",\"agent_id\":\"shiftrelay:intake\",\"run_id\":\"9d87fd210f92e980ff2f0cc8e8d2d05b\",\"role\":\"user\"},{\"id\":\"e3843d47-0056-4812-98b2-c617ed0cad8f\",\"memory\":\"SHIFTRELAY-M0-P100-FUSER P100 firmware 2.4 faint print after 20-30 pages; fuser pressure reset restored darkness. Proposed learning only, not yet approved.\",\"hash\":\"97ef61f01e2cbbed835e27fe3c50a91e\",\"metadata\":{\"state\":\"proposed\",\"fix_id\":\"fix-p100-fuser-001\",\"case_id\":\"case-m0-smoke-001\",\"meko_datapack_id\":\"f28dc489-57a2-4b04-aab0-5d6689cba714\"},\"score\":0.37375498040582505,\"created_at\":\"202",
+  "knowledge_digest": "{\"results\":[{\"id\":\"b2b09d40-fce3-4c7b-90bb-778c28984e4a\",\"chunk_text\":\"SHIFTRELAY-PROBE-1795538309236 P100 firmware 2.4 fuser pressure reset. SANITIZED CAPABILITY PROBE, not a real fix.\",\"document_id\":\"b8609974-8b91-99bc-378d-dcb858ad99b8\",\"metadata_filters\":{\"source\":\"memory\",\"agent_id\":\"shiftrelay:probe\",\"memory_id\":\"8056483d-f341-49f8-83d1-536830207a47\"},\"distance\":1.054861969889125,\"match_type\":\"hybrid\",\"rank\":0.06079271,\"rerank_score\":0.9999069134729501}],\"count\":1}",
+  "observed": "Shared memory is retrievable from a separate MCP initialize/conversation."
+}

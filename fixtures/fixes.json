@@ -1,0 +1,61 @@
+[
+  {
+    "fixId": "fix-p100-fuser-001",
+    "version": 1,
+    "sourceCaseId": "case-001-friday-p100",
+    "symptom": "Faint labels after 20-30 pages. Print darkness fades across the roll.",
+    "model": "P100",
+    "supportedFirmware": ["2.4"],
+    "prerequisites": ["Fuser access door opens", "Printer idle for 10 minutes"],
+    "steps": [
+      "Confirm the printer reports firmware 2.4 and the fuser access door is open.",
+      "With the printer idle for at least 10 minutes, run the service-menu fuser pressure reset sequence.",
+      "Print a 50-label verification run and keep the first and last labels.",
+      "Record the firmware, page count, and ambient temperature in the case notes."
+    ]
+  },
+  {
+    "fixId": "fix-p109-cutter-002",
+    "version": 1,
+    "sourceCaseId": "case-005-p109-cutter",
+    "symptom": "Cutter jams after 200 sheets and returns after the path is cleared.",
+    "model": "P109",
+    "supportedFirmware": ["1.8"],
+    "prerequisites": ["Cutter path cleared", "Power removed"],
+    "steps": [
+      "Power down and remove the cutter path debris with the approved tool.",
+      "Inspect the cutter home sensor and reseat its connector.",
+      "Run a 250-sheet test and stop at the first repeat jam.",
+      "Record sheet count and sensor state before escalating."
+    ]
+  },
+  {
+    "fixId": "fix-p100-roller-003",
+    "version": 1,
+    "sourceCaseId": "case-006-p100-roller",
+    "symptom": "Media roller slips on the second pass as the roller warms up.",
+    "model": "P100",
+    "supportedFirmware": ["2.4"],
+    "prerequisites": ["Media path clean"],
+    "steps": [
+      "Clean the roller with the approved lint-free method.",
+      "Run a 100-label test on the current media lot.",
+      "Record the media lot and roller temperature."
+    ]
+  },
+  {
+    "fixId": "fix-p100-roller-003",
+    "version": 2,
+    "sourceCaseId": "case-006-p100-roller",
+    "symptom": "Media roller slips on the second pass as the roller warms up.",
+    "model": "P100",
+    "supportedFirmware": ["2.4", "2.5"],
+    "prerequisites": ["Media path clean"],
+    "steps": [
+      "Clean the roller with the approved lint-free method.",
+      "Check the roller tension screw is at the marked position for firmware 2.4 or 2.5.",
+      "Run a 100-label test on the current media lot.",
+      "Record the media lot, firmware, and roller temperature."
+    ]
+  }
+]

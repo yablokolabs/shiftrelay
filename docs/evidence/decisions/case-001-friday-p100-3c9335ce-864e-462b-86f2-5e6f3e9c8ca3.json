@@ -1,0 +1,87 @@
+{
+  "decisionId": "3c9335ce-864e-462b-86f2-5e6f3e9c8ca3",
+  "caseId": "case-001-friday-p100",
+  "sessionId": "34cbb16314b9e4133d7bd04324f47cde",
+  "conversationId": "34cbb16314b9e4133d7bd04324f47cde",
+  "retrieved": {
+    "sessionId": "34cbb16314b9e4133d7bd04324f47cde",
+    "conversationId": "34cbb16314b9e4133d7bd04324f47cde",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-fuser-001",
+    "fixVersion": 1,
+    "memoryId": "000f3a29-a096-4f18-96eb-d07b7464cf5b",
+    "distance": 1.0183797728171173,
+    "rerankScore": 0.999433199657753,
+    "retrievedAt": "2026-11-24T16:49:28.353Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-fuser-001",
+    "version": 1,
+    "status": "approved",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:35.345Z",
+    "currentVersion": 1,
+    "revision": 4
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 4)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "pass",
+      "detail": "Approved by R. Chen (synthetic technician)."
+    },
+    {
+      "id": "version",
+      "label": "Version currency",
+      "outcome": "pass",
+      "detail": "v1 is the current version."
+    },
+    {
+      "id": "model",
+      "label": "Equipment model",
+      "outcome": "pass",
+      "detail": "Model P100 matches."
+    },
+    {
+      "id": "firmware",
+      "label": "Firmware applicability",
+      "outcome": "pass",
+      "detail": "Firmware 2.4.0 is approved."
+    },
+    {
+      "id": "prerequisites",
+      "label": "Prerequisites",
+      "outcome": "pass",
+      "detail": "All prerequisites confirmed."
+    }
+  ],
+  "outcome": "recommended",
+  "headline": "Approved fix applies",
+  "answer": "Apply fix-p100-fuser-001 v1. Approved by R. Chen (synthetic technician).",
+  "steps": [
+    "Confirm the printer reports firmware 2.4 and the fuser access door is open.",
+    "With the printer idle for at least 10 minutes, run the service-menu fuser pressure reset sequence.",
+    "Print a 50-label verification run and keep the first and last labels.",
+    "Record the firmware, page count, and ambient temperature in the case notes."
+  ],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T16:49:28.354Z",
+  "latencyMs": 1035,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

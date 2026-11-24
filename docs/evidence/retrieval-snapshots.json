@@ -1,0 +1,35 @@
+{
+  "withdrawn": {
+    "sessionId": "eace824a7a44379adcc8b29c6911b0a4",
+    "conversationId": "eace824a7a44379adcc8b29c6911b0a4",
+    "source": "shared_knowledge",
+    "fixId": "fix-p109-cutter-002",
+    "fixVersion": 1,
+    "memoryId": "8dc1e89c-c15d-4b5a-b2ae-b6d67ccab350",
+    "distance": 1.033578936037806,
+    "rerankScore": 0.9984690777904797,
+    "retrievedAt": "2026-11-24T16:46:39.421Z"
+  },
+  "roller-v1": {
+    "sessionId": "18f0e371c280f73052d61ce5a7a6054b",
+    "conversationId": "18f0e371c280f73052d61ce5a7a6054b",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-roller-003",
+    "fixVersion": 1,
+    "memoryId": "7fc59f6c-d5f9-400b-b87f-0ff6d9fd8ac0",
+    "distance": 1.0137709986799466,
+    "rerankScore": 0.9986677781677544,
+    "retrievedAt": "2026-11-24T16:46:44.228Z"
+  },
+  "primary": {
+    "sessionId": "c3f713895969569c3ae59be1c504e95d",
+    "conversationId": "c3f713895969569c3ae59be1c504e95d",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-fuser-001",
+    "fixVersion": 1,
+    "memoryId": "000f3a29-a096-4f18-96eb-d07b7464cf5b",
+    "distance": 1.0183797728171173,
+    "rerankScore": 0.999433199657753,
+    "retrievedAt": "2026-11-24T16:46:46.562Z"
+  }
+}

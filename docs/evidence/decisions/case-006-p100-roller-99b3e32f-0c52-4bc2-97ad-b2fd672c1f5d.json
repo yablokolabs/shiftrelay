@@ -1,0 +1,87 @@
+{
+  "decisionId": "99b3e32f-0c52-4bc2-97ad-b2fd672c1f5d",
+  "caseId": "case-006-p100-roller",
+  "sessionId": "73830de0d7ccb99dfbeda0f3211e542a",
+  "conversationId": "73830de0d7ccb99dfbeda0f3211e542a",
+  "retrieved": {
+    "sessionId": "73830de0d7ccb99dfbeda0f3211e542a",
+    "conversationId": "73830de0d7ccb99dfbeda0f3211e542a",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-roller-003",
+    "fixVersion": 2,
+    "memoryId": "3a939c82-464d-4e88-a44c-78a59aa3e2bd",
+    "distance": 1.0140756540705542,
+    "rerankScore": 0.9991482205955502,
+    "retrievedAt": "2026-11-24T17:00:23.939Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-roller-003",
+    "version": 2,
+    "status": "approved",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:45.153Z",
+    "currentVersion": 2,
+    "revision": 5
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-roller-003 v2 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-roller-003 v2 resolved from the control store (revision 5)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "pass",
+      "detail": "Approved by R. Chen (synthetic technician)."
+    },
+    {
+      "id": "version",
+      "label": "Version currency",
+      "outcome": "pass",
+      "detail": "v2 is the current version."
+    },
+    {
+      "id": "model",
+      "label": "Equipment model",
+      "outcome": "pass",
+      "detail": "Model P100 matches."
+    },
+    {
+      "id": "firmware",
+      "label": "Firmware applicability",
+      "outcome": "pass",
+      "detail": "Firmware 2.4.0 is approved."
+    },
+    {
+      "id": "prerequisites",
+      "label": "Prerequisites",
+      "outcome": "pass",
+      "detail": "All prerequisites confirmed."
+    }
+  ],
+  "outcome": "recommended",
+  "headline": "Approved fix applies",
+  "answer": "Apply fix-p100-roller-003 v2. Approved by R. Chen (synthetic technician).",
+  "steps": [
+    "Clean the roller with the approved lint-free method.",
+    "Check the roller tension screw is at the marked position for firmware 2.4 or 2.5.",
+    "Run a 100-label test on the current media lot.",
+    "Record the media lot, firmware, and roller temperature."
+  ],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:00:23.940Z",
+  "latencyMs": 1039,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

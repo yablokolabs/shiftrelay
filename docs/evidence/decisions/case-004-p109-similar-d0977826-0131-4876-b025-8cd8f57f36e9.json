@@ -1,0 +1,70 @@
+{
+  "decisionId": "d0977826-0131-4876-b025-8cd8f57f36e9",
+  "caseId": "case-004-p109-similar",
+  "sessionId": "1b9f41d96b08ce235dabd16ed9952f9f",
+  "conversationId": "1b9f41d96b08ce235dabd16ed9952f9f",
+  "retrieved": {
+    "sessionId": "1b9f41d96b08ce235dabd16ed9952f9f",
+    "conversationId": "1b9f41d96b08ce235dabd16ed9952f9f",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-fuser-001",
+    "fixVersion": 1,
+    "memoryId": "3562e618-d88c-44be-b158-6b7b00c789a1",
+    "distance": 1.0164567263672966,
+    "rerankScore": 0.9997179557125735,
+    "retrievedAt": "2026-11-24T17:00:12.706Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-fuser-001",
+    "version": 1,
+    "status": "approved",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:35.345Z",
+    "currentVersion": 1,
+    "revision": 5
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "pass",
+      "detail": "Approved by R. Chen (synthetic technician)."
+    },
+    {
+      "id": "version",
+      "label": "Version currency",
+      "outcome": "pass",
+      "detail": "v1 is the current version."
+    },
+    {
+      "id": "model",
+      "label": "Equipment model",
+      "outcome": "fail",
+      "detail": "Case model P109 does not match fix model P100."
+    }
+  ],
+  "outcome": "withheld",
+  "headline": "Withheld: different model",
+  "answer": "This fix is scoped to P100; the case is P109. Do not apply it.",
+  "steps": [],
+  "staleRetrieval": false,
+  "decidedAt": "2026-11-24T17:00:12.706Z",
+  "latencyMs": 1067,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 4
+}

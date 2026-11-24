@@ -1,0 +1,58 @@
+{
+  "decisionId": "bb265cef-2e3f-4969-8eb5-36591633d813",
+  "caseId": "case-006-p100-roller",
+  "sessionId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+  "conversationId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+  "retrieved": {
+    "sessionId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+    "conversationId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+    "source": "shared_knowledge",
+    "fixId": "fix-p100-roller-003",
+    "fixVersion": 1,
+    "memoryId": "7fc59f6c-d5f9-400b-b87f-0ff6d9fd8ac0",
+    "distance": 1.0137709986799466,
+    "rerankScore": 0.9986677781677544,
+    "retrievedAt": "2026-11-24T16:46:44.228Z"
+  },
+  "canonical": {
+    "fixId": "fix-p100-roller-003",
+    "version": 1,
+    "status": "superseded",
+    "approver": "R. Chen (synthetic technician)",
+    "approvedAt": "2026-11-24T16:46:42.004Z",
+    "currentVersion": 2,
+    "revision": 6
+  },
+  "checks": [
+    {
+      "id": "retrieved",
+      "label": "Retrieved candidate",
+      "outcome": "pass",
+      "detail": "Meko returned fix-p100-roller-003 v1 from shared_knowledge."
+    },
+    {
+      "id": "canonical",
+      "label": "Canonical record",
+      "outcome": "pass",
+      "detail": "fix-p100-roller-003 v1 resolved from the control store (revision 6)."
+    },
+    {
+      "id": "status",
+      "label": "Approval status",
+      "outcome": "fail",
+      "detail": "Fix version is superseded."
+    }
+  ],
+  "outcome": "withheld",
+  "headline": "Withheld: superseded version",
+  "answer": "This version is no longer current (current v2, approved). Do not apply it.",
+  "steps": [],
+  "staleRetrieval": true,
+  "decidedAt": "2026-11-24T17:00:21.070Z",
+  "latencyMs": 416,
+  "responder": "deterministic-rules-v1",
+  "mekoArtifactHash": null,
+  "mekoMessageCaptured": true,
+  "retrievalError": null,
+  "mcpCalls": 3
+}

@@ -1,0 +1,768 @@
+{
+  "evaluation": "ShiftRelay fresh-session baseline vs shared-memory treatment",
+  "synthetic": true,
+  "startedAt": "2026-11-24T16:59:58.406Z",
+  "finishedAt": "2026-11-24T17:00:28.968Z",
+  "fixtureVersion": "fixtures/cases.json + fixtures/fixes.json (frozen synthetic set)",
+  "model": {
+    "responder": "deterministic-rules-v1",
+    "note": "Both arms use the same deterministic responder and the same prompts. No external model key was used, so token counts are not exposed."
+  },
+  "design": {
+    "arms": {
+      "baseline": "Baseline datapack with the same static manual artifact and no learned fix.",
+      "treatment": "Primary datapack with technician-approved fix promoted into shared knowledge."
+    },
+    "retrieval": "knowledgebase_search over Meko shared knowledge; canonical status resolved from the control store.",
+    "sampleSize": 16,
+    "scenarios": [
+      {
+        "id": "exact_match",
+        "caseId": "case-001-friday-p100",
+        "expectedTreatment": "recommended",
+        "expectedBaseline": "no_fix",
+        "description": "P100 firmware 2.4, exact approved fix."
+      },
+      {
+        "id": "missing_firmware",
+        "caseId": "case-002-monday-p100",
+        "expectedTreatment": "question",
+        "expectedBaseline": "no_fix",
+        "description": "P100 with no firmware recorded; must ask, not guess."
+      },
+      {
+        "id": "firmware_mismatch",
+        "caseId": "case-003-p100-fw23",
+        "expectedTreatment": "withheld",
+        "expectedBaseline": "no_fix",
+        "description": "P100 firmware 2.3 against a 2.4-only fix."
+      },
+      {
+        "id": "different_model",
+        "caseId": "case-004-p109-similar",
+        "expectedTreatment": "withheld",
+        "expectedBaseline": "no_fix",
+        "description": "Similar faint-print symptom on P109; model mismatch."
+      },
+      {
+        "id": "withdrawn_live",
+        "caseId": "case-005-p109-cutter",
+        "expectedTreatment": "withheld",
+        "expectedBaseline": "no_fix",
+        "description": "Withdrawn cutter fix; a live retrieval must not revive it."
+      },
+      {
+        "id": "withdrawn_delayed_index",
+        "caseId": "case-005-p109-cutter",
+        "expectedTreatment": "withheld",
+        "expectedBaseline": "no_fix",
+        "overrideSnapshot": "withdrawn",
+        "description": "Pre-withdrawal retrieval snapshot replayed after withdrawal."
+      },
+      {
+        "id": "superseded_stale",
+        "caseId": "case-006-p100-roller",
+        "expectedTreatment": "withheld",
+        "expectedBaseline": "no_fix",
+        "overrideSnapshot": "roller-v1",
+        "description": "Superseded v1 snapshot against the current approved v2."
+      },
+      {
+        "id": "superseded_live",
+        "caseId": "case-006-p100-roller",
+        "expectedTreatment": "recommended",
+        "expectedBaseline": "no_fix",
+        "description": "Live retrieval after v2 approval; current version may apply."
+      }
+    ],
+    "distinctSessions": 16,
+    "allSessionsDistinct": true
+  },
+  "summary": {
+    "baseline": {
+      "runs": 8,
+      "correctOutcomes": 8,
+      "recommended": 0,
+      "incorrectRecommendations": 0,
+      "questions": 0,
+      "withheld": 0,
+      "noFix": 8,
+      "mcpCalls": 32,
+      "latencyMs": {
+        "mean": 943,
+        "p50": 770,
+        "p95": 2108
+      },
+      "tokens": null
+    },
+    "treatment": {
+      "runs": 8,
+      "correctOutcomes": 8,
+      "recommended": 2,
+      "incorrectRecommendations": 0,
+      "questions": 1,
+      "withheld": 5,
+      "noFix": 0,
+      "mcpCalls": 30,
+      "latencyMs": {
+        "mean": 898,
+        "p50": 1039,
+        "p95": 1118
+      },
+      "tokens": null
+    }
+  },
+  "scenarios": [
+    {
+      "id": "exact_match",
+      "caseId": "case-001-friday-p100",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "2cd20e30ae8b969b1084314fdcd24537",
+      "conversationId": "2cd20e30ae8b969b1084314fdcd24537",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 2108,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "exact_match",
+      "caseId": "case-001-friday-p100",
+      "arm": "treatment",
+      "expected": "recommended",
+      "observed": "recommended",
+      "correct": true,
+      "headline": "Approved fix applies",
+      "sessionId": "e5afffcfdde680e19f4992494c68221c",
+      "conversationId": "e5afffcfdde680e19f4992494c68221c",
+      "retrievedFix": "fix-p100-fuser-001",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0154437391851971,
+      "staleRetrieval": false,
+      "canonicalStatus": "approved",
+      "mcpCalls": 4,
+      "latencyMs": 1118,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "pass",
+          "detail": "Approved by R. Chen (synthetic technician)."
+        },
+        {
+          "id": "version",
+          "label": "Version currency",
+          "outcome": "pass",
+          "detail": "v1 is the current version."
+        },
+        {
+          "id": "model",
+          "label": "Equipment model",
+          "outcome": "pass",
+          "detail": "Model P100 matches."
+        },
+        {
+          "id": "firmware",
+          "label": "Firmware applicability",
+          "outcome": "pass",
+          "detail": "Firmware 2.4.0 is approved."
+        },
+        {
+          "id": "prerequisites",
+          "label": "Prerequisites",
+          "outcome": "pass",
+          "detail": "All prerequisites confirmed."
+        }
+      ]
+    },
+    {
+      "id": "missing_firmware",
+      "caseId": "case-002-monday-p100",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "ff2656f8b3ebf170f10027de19d3200a",
+      "conversationId": "ff2656f8b3ebf170f10027de19d3200a",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 831,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "missing_firmware",
+      "caseId": "case-002-monday-p100",
+      "arm": "treatment",
+      "expected": "question",
+      "observed": "question",
+      "correct": true,
+      "headline": "Ask for the firmware version",
+      "sessionId": "f6ab9e096ee681a5636de6154de5c22d",
+      "conversationId": "f6ab9e096ee681a5636de6154de5c22d",
+      "retrievedFix": "fix-p100-fuser-001",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0170867995907047,
+      "staleRetrieval": false,
+      "canonicalStatus": "approved",
+      "mcpCalls": 4,
+      "latencyMs": 1025,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "pass",
+          "detail": "Approved by R. Chen (synthetic technician)."
+        },
+        {
+          "id": "version",
+          "label": "Version currency",
+          "outcome": "pass",
+          "detail": "v1 is the current version."
+        },
+        {
+          "id": "model",
+          "label": "Equipment model",
+          "outcome": "pass",
+          "detail": "Model P100 matches."
+        },
+        {
+          "id": "firmware",
+          "label": "Firmware version",
+          "outcome": "question",
+          "detail": "Case does not report a firmware version."
+        }
+      ]
+    },
+    {
+      "id": "firmware_mismatch",
+      "caseId": "case-003-p100-fw23",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "0377dbc2b19d1c8b99fe9b357053288e",
+      "conversationId": "0377dbc2b19d1c8b99fe9b357053288e",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 767,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "firmware_mismatch",
+      "caseId": "case-003-p100-fw23",
+      "arm": "treatment",
+      "expected": "withheld",
+      "observed": "withheld",
+      "correct": true,
+      "headline": "Withheld: firmware mismatch",
+      "sessionId": "d3a54a8ea7cf1864887356f1aecfddfd",
+      "conversationId": "d3a54a8ea7cf1864887356f1aecfddfd",
+      "retrievedFix": "fix-p100-fuser-001",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0157339764455182,
+      "staleRetrieval": false,
+      "canonicalStatus": "approved",
+      "mcpCalls": 4,
+      "latencyMs": 1090,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "pass",
+          "detail": "Approved by R. Chen (synthetic technician)."
+        },
+        {
+          "id": "version",
+          "label": "Version currency",
+          "outcome": "pass",
+          "detail": "v1 is the current version."
+        },
+        {
+          "id": "model",
+          "label": "Equipment model",
+          "outcome": "pass",
+          "detail": "Model P100 matches."
+        },
+        {
+          "id": "firmware",
+          "label": "Firmware applicability",
+          "outcome": "fail",
+          "detail": "Firmware 2.3.0 is not in the approved set (2.4)."
+        }
+      ]
+    },
+    {
+      "id": "different_model",
+      "caseId": "case-004-p109-similar",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "64825a93af275a1c18e14cdfa5f2ba8a",
+      "conversationId": "64825a93af275a1c18e14cdfa5f2ba8a",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 757,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "different_model",
+      "caseId": "case-004-p109-similar",
+      "arm": "treatment",
+      "expected": "withheld",
+      "observed": "withheld",
+      "correct": true,
+      "headline": "Withheld: different model",
+      "sessionId": "1b9f41d96b08ce235dabd16ed9952f9f",
+      "conversationId": "1b9f41d96b08ce235dabd16ed9952f9f",
+      "retrievedFix": "fix-p100-fuser-001",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0164567263672966,
+      "staleRetrieval": false,
+      "canonicalStatus": "approved",
+      "mcpCalls": 4,
+      "latencyMs": 1067,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-fuser-001 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-fuser-001 v1 resolved from the control store (revision 5)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "pass",
+          "detail": "Approved by R. Chen (synthetic technician)."
+        },
+        {
+          "id": "version",
+          "label": "Version currency",
+          "outcome": "pass",
+          "detail": "v1 is the current version."
+        },
+        {
+          "id": "model",
+          "label": "Equipment model",
+          "outcome": "fail",
+          "detail": "Case model P109 does not match fix model P100."
+        }
+      ]
+    },
+    {
+      "id": "withdrawn_live",
+      "caseId": "case-005-p109-cutter",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "623bf91dbfc04fe553b7ae3919a31a76",
+      "conversationId": "623bf91dbfc04fe553b7ae3919a31a76",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 755,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "withdrawn_live",
+      "caseId": "case-005-p109-cutter",
+      "arm": "treatment",
+      "expected": "withheld",
+      "observed": "withheld",
+      "correct": true,
+      "headline": "Withheld: fix withdrawn",
+      "sessionId": "554ff298c75ba1bc79f347948905177a",
+      "conversationId": "554ff298c75ba1bc79f347948905177a",
+      "retrievedFix": "fix-p109-cutter-002",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.033578936037806,
+      "staleRetrieval": false,
+      "canonicalStatus": "withdrawn",
+      "mcpCalls": 4,
+      "latencyMs": 1019,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p109-cutter-002 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p109-cutter-002 v1 resolved from the control store (revision 7)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "fail",
+          "detail": "Fix is withdrawn: Synthetic safety review: sensor reseat step needs a revised torque value."
+        }
+      ]
+    },
+    {
+      "id": "withdrawn_delayed_index",
+      "caseId": "case-005-p109-cutter",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "d22f0353741ea10a00d806ce3a0d68bb",
+      "conversationId": "d22f0353741ea10a00d806ce3a0d68bb",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 767,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "withdrawn_delayed_index",
+      "caseId": "case-005-p109-cutter",
+      "arm": "treatment",
+      "expected": "withheld",
+      "observed": "withheld",
+      "correct": true,
+      "headline": "Withheld: fix withdrawn",
+      "sessionId": "b7ebf52f2d8ced6f2283f44eabc71816",
+      "conversationId": "b7ebf52f2d8ced6f2283f44eabc71816",
+      "retrievedFix": "fix-p109-cutter-002",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.033578936037806,
+      "staleRetrieval": true,
+      "canonicalStatus": "withdrawn",
+      "mcpCalls": 3,
+      "latencyMs": 413,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p109-cutter-002 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p109-cutter-002 v1 resolved from the control store (revision 7)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "fail",
+          "detail": "Fix is withdrawn: Synthetic safety review: sensor reseat step needs a revised torque value."
+        }
+      ]
+    },
+    {
+      "id": "superseded_stale",
+      "caseId": "case-006-p100-roller",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "530cc63d4419026066a42fd18d4edf4f",
+      "conversationId": "530cc63d4419026066a42fd18d4edf4f",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 788,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "superseded_stale",
+      "caseId": "case-006-p100-roller",
+      "arm": "treatment",
+      "expected": "withheld",
+      "observed": "withheld",
+      "correct": true,
+      "headline": "Withheld: superseded version",
+      "sessionId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+      "conversationId": "c5cdf61f7c312c4cf70a9ef37f9bb4e6",
+      "retrievedFix": "fix-p100-roller-003",
+      "retrievedVersion": 1,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0137709986799466,
+      "staleRetrieval": true,
+      "canonicalStatus": "superseded",
+      "mcpCalls": 3,
+      "latencyMs": 416,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-roller-003 v1 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-roller-003 v1 resolved from the control store (revision 6)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "fail",
+          "detail": "Fix version is superseded."
+        }
+      ]
+    },
+    {
+      "id": "superseded_live",
+      "caseId": "case-006-p100-roller",
+      "arm": "baseline",
+      "expected": "no_fix",
+      "observed": "no_fix",
+      "correct": true,
+      "headline": "No approved fix retrieved",
+      "sessionId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+      "conversationId": "5b8f4a8c5fda08d0424d3b3c55f67378",
+      "retrievedFix": null,
+      "retrievedVersion": null,
+      "retrievedSource": "none",
+      "distance": null,
+      "staleRetrieval": false,
+      "canonicalStatus": null,
+      "mcpCalls": 4,
+      "latencyMs": 770,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "fail",
+          "detail": "No shared fix was retrieved from Meko."
+        }
+      ]
+    },
+    {
+      "id": "superseded_live",
+      "caseId": "case-006-p100-roller",
+      "arm": "treatment",
+      "expected": "recommended",
+      "observed": "recommended",
+      "correct": true,
+      "headline": "Approved fix applies",
+      "sessionId": "73830de0d7ccb99dfbeda0f3211e542a",
+      "conversationId": "73830de0d7ccb99dfbeda0f3211e542a",
+      "retrievedFix": "fix-p100-roller-003",
+      "retrievedVersion": 2,
+      "retrievedSource": "shared_knowledge",
+      "distance": 1.0140756540705542,
+      "staleRetrieval": false,
+      "canonicalStatus": "approved",
+      "mcpCalls": 4,
+      "latencyMs": 1039,
+      "checks": [
+        {
+          "id": "retrieved",
+          "label": "Retrieved candidate",
+          "outcome": "pass",
+          "detail": "Meko returned fix-p100-roller-003 v2 from shared_knowledge."
+        },
+        {
+          "id": "canonical",
+          "label": "Canonical record",
+          "outcome": "pass",
+          "detail": "fix-p100-roller-003 v2 resolved from the control store (revision 5)."
+        },
+        {
+          "id": "status",
+          "label": "Approval status",
+          "outcome": "pass",
+          "detail": "Approved by R. Chen (synthetic technician)."
+        },
+        {
+          "id": "version",
+          "label": "Version currency",
+          "outcome": "pass",
+          "detail": "v2 is the current version."
+        },
+        {
+          "id": "model",
+          "label": "Equipment model",
+          "outcome": "pass",
+          "detail": "Model P100 matches."
+        },
+        {
+          "id": "firmware",
+          "label": "Firmware applicability",
+          "outcome": "pass",
+          "detail": "Firmware 2.4.0 is approved."
+        },
+        {
+          "id": "prerequisites",
+          "label": "Prerequisites",
+          "outcome": "pass",
+          "detail": "All prerequisites confirmed."
+        }
+      ]
+    }
+  ],
+  "duplicateApproval": {
+    "fixId": "fix-p100-fuser-001",
+    "attempts": [
+      "attempt 1: fix-p100-fuser-001 v1 is already approved.",
+      "attempt 2: fix-p100-fuser-001 v1 is already approved."
+    ],
+    "bothRejected": true,
+    "approvalEventCount": 1,
+    "singleApprovalEvent": true,
+    "finalStatus": "approved"
+  },
+  "assertions": {
+    "treatmentRecommendedExact": true,
+    "treatmentAskedForMissingFirmware": true,
+    "withdrawnLiveStayedWithheld": true,
+    "delayedIndexingStayedWithheld": true,
+    "supersededVersionStayedWithheld": true,
+    "duplicateApprovalRejected": true,
+    "allSessionsDistinct": true
+  },
+  "limitations": [
+    "Synthetic fixtures only; results establish behavior for these cases, not field accuracy.",
+    "The hosted MCP endpoint is stateless per request; a fresh session is a separate initialize plus a separate conversation container.",
+    "Meko cannot un-promote or mutate a promoted collective memory through the verified API, so the canonical control store is authoritative for status.",
+    "Token counts are not exposed in this configuration; the deterministic responder makes no model call.",
+    "Live retrieval after withdrawal still returned the approved snapshot in this fixture set; the canonical status withheld it."
+  ]
+}

@@ -53,10 +53,17 @@ export interface DatapackDetail {
 }
 
 export const mekoRest = {
-  health(): Promise<unknown> {
-    return rest("/health", {
-      headers: { Authorization: undefined as unknown as string },
+  async health(): Promise<{ status: string; database: string }> {
+    const response = await fetch(`${env.mekoApiBase}/health`, {
+      headers: { "User-Agent": "shiftrelay/0.1" },
+      signal: AbortSignal.timeout(20_000),
     });
+    if (!response.ok) throw new Error(`Meko health HTTP ${response.status}`);
+    const body = (await response.json()) as { data?: { status?: string; database?: string } };
+    return {
+      status: body.data?.status ?? "unknown",
+      database: body.data?.database ?? "unknown",
+    };
   },
   listDatapacks(): Promise<{ items: DatapackSummary[] }> {
     return rest("/datapacks?limit=100");

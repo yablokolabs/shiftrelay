@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-24T16:59:11.220Z",
+  "updated": [
+    {
+      "fixId": "fix-p100-fuser-001",
+      "version": 1,
+      "before": "2bb760e5-c270-4ec2-8c5d-eaeb3eb8baca",
+      "after": "000f3a29-a096-4f18-96eb-d07b7464cf5b"
+    },
+    {
+      "fixId": "fix-p109-cutter-002",
+      "version": 1,
+      "before": "cb1dcb26-9c7e-4aba-b608-d4706224209e",
+      "after": "8dc1e89c-c15d-4b5a-b2ae-b6d67ccab350"
+    },
+    {
+      "fixId": "fix-p100-roller-003",
+      "version": 1,
+      "before": "57691542-5bc6-40a3-937d-769e948542f5",
+      "after": "7fc59f6c-d5f9-400b-b87f-0ff6d9fd8ac0"
+    },
+    {
+      "fixId": "fix-p100-roller-003",
+      "version": 2,
+      "before": "3cb7bd45-9927-4696-a9f1-ae5fd3b4655f",
+      "after": "3a939c82-464d-4e88-a44c-78a59aa3e2bd"
+    }
+  ]
+}
