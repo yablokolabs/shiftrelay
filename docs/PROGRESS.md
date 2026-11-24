@@ -15,7 +15,7 @@ Limitations: synthetic data; MCP is stateless per request, so a session is a sep
 
 ## M1 — approved memory and fresh recall (complete)
 
-Date: 2026-11-24 · Commit: `0e70730`
+Date: 2026-11-24 · Commit: `7de6367`
 
 - Built the Node Meko adapter (MCP + REST), typed control store, React console and seed flow.
 - Created Meko project **ShiftRelay** with **Field knowledge** and **Evaluation** folders; primary and baseline datapacks are filed.
@@ -30,7 +30,7 @@ Limitation observed: `memory_promote` created a shared row with a different id; 
 
 ## M2 — applicability and withdrawal (complete)
 
-Date: 2026-11-24 · Commit: `0e70730`
+Date: 2026-11-24 · Commit: `7de6367`
 
 - Pure typed gate in `shared/applicability.ts`: status → current version → model → firmware → prerequisites.
 - Missing firmware returns a question. Firmware/model mismatch, unapproved proposal, superseded version and missing prerequisites withhold.
@@ -40,7 +40,7 @@ Date: 2026-11-24 · Commit: `0e70730`
 
 ## M3 — evaluation, demo and submission materials (complete)
 
-Date: 2026-11-24 · Commit: `1971c54`
+Date: 2026-11-24 · Commit: `4bd905e`
 
 - Evaluation: 8 scenarios × 2 arms = **16 decisions**, all 16 sessions distinct.
 - Treatment 8/8 correct, 2 recommended, 0 incorrect recommendations, 1 question, 5 withheld.
