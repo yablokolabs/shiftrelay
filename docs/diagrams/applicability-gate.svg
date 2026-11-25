@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="applicability-gate-title applicability-gate-desc" id="applicability-gate-root">
+  <title id="applicability-gate-title">The deterministic gate</title>
+  <desc id="applicability-gate-desc">Flowchart showing a retrieved fix passing through canonical-record, approval-status, current-version and scope checks before it can be recommended.</desc>
+  <defs>
+      <style>#applicability-gate-root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #101828; }
+      #applicability-gate-root .bg { fill: #f4f6f9; }
+      #applicability-gate-root .dot { fill: rgba(11,30,75,0.09); }
+      #applicability-gate-root .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 35px; font-weight: 700; letter-spacing: -1.1px; fill: #0b1e4b; }
+      #applicability-gate-root .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14.5px; fill: #52647c; }
+      #applicability-gate-root .topnote { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; letter-spacing: 1.3px; fill: #667085; }
+      #applicability-gate-root .rule { stroke: #d7e0eb; stroke-width: 1; }
+      #applicability-gate-root .start { fill: rgba(11,30,75,0.035); stroke: #667085; stroke-width: 1; }
+      #applicability-gate-root .diamond { fill: #ffffff; stroke: #0b1e4b; stroke-width: 1.2; }
+      #applicability-gate-root .diamond-focal { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.5; }
+      #applicability-gate-root .end { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.5; }
+      #applicability-gate-root .name { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 650; fill: #101828; }
+      #applicability-gate-root .name-sm { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 650; fill: #101828; }
+      #applicability-gate-root .sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #52647c; }
+      #applicability-gate-root .pass { fill: none; stroke: #52647c; stroke-width: 1.2; }
+      #applicability-gate-root .fail { fill: none; stroke: #b42318; stroke-width: 1.2; }
+      #applicability-gate-root .fail-ask { fill: none; stroke: #b45309; stroke-width: 1.2; }
+      #applicability-gate-root .label-bg { fill: #f4f6f9; }
+      #applicability-gate-root .label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 7.5px; letter-spacing: 0.7px; fill: #52647c; }
+      #applicability-gate-root .outcome { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 650; }
+      #applicability-gate-root .outcome-sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; letter-spacing: 0.5px; fill: #667085; }
+      #applicability-gate-root .red { fill: #b42318; }
+      #applicability-gate-root .amber { fill: #b45309; }
+      #applicability-gate-root .teal { fill: #087a70; }
+      #applicability-gate-root .panel { fill: #ffffff; stroke: #d7e0eb; stroke-width: 1; }
+      #applicability-gate-root .panel-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 18px; font-weight: 650; fill: #0b1e4b; }
+      #applicability-gate-root .panel-label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.5px; fill: #087a70; }
+      #applicability-gate-root .panel-head { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 650; fill: #101828; }
+      #applicability-gate-root .panel-copy { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10.5px; fill: #52647c; }
+      #applicability-gate-root .panel-mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      #applicability-gate-root .hair { stroke: #e2e7ef; stroke-width: 1; }
+      #applicability-gate-root .legend { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      #applicability-gate-root .legend-title { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.7px; fill: #667085; }</style>
+    <style>
+      .bg { fill: #f4f6f9; }
+      .dot { fill: rgba(11,30,75,0.09); }
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 35px; font-weight: 700; letter-spacing: -1.1px; fill: #0b1e4b; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14.5px; fill: #52647c; }
+      .eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 2px; fill: #087a70; }
+      .topnote { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; letter-spacing: 1.3px; fill: #667085; }
+      .rule { stroke: #d7e0eb; stroke-width: 1; }
+      .start { fill: rgba(11,30,75,0.035); stroke: #667085; stroke-width: 1; }
+      .diamond { fill: #ffffff; stroke: #0b1e4b; stroke-width: 1.2; }
+      .diamond-focal { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.5; }
+      .end { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.5; }
+      .name { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 13.5px; font-weight: 650; fill: #101828; }
+      .name-sm { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 650; fill: #101828; }
+      .sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #52647c; }
+      .pass { fill: none; stroke: #52647c; stroke-width: 1.2; }
+      .fail { fill: none; stroke: #b42318; stroke-width: 1.2; }
+      .fail-ask { fill: none; stroke: #b45309; stroke-width: 1.2; }
+      .label-bg { fill: #f4f6f9; }
+      .label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 7.5px; letter-spacing: 0.7px; fill: #52647c; }
+      .outcome { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12.5px; font-weight: 650; }
+      .outcome-sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; letter-spacing: 0.5px; fill: #667085; }
+      .red { fill: #b42318; }
+      .amber { fill: #b45309; }
+      .teal { fill: #087a70; }
+      .panel { fill: #ffffff; stroke: #d7e0eb; stroke-width: 1; }
+      .panel-title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 18px; font-weight: 650; fill: #0b1e4b; }
+      .panel-label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.5px; fill: #087a70; }
+      .panel-head { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 650; fill: #101828; }
+      .panel-copy { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 10.5px; fill: #52647c; }
+      .panel-mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      .hair { stroke: #e2e7ef; stroke-width: 1; }
+      .legend { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      .legend-title { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.7px; fill: #667085; }
+    </style>
+    <pattern id="applicability-gate-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" class="dot"/>
+    </pattern>
+    <marker id="applicability-gate-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#52647c"/></marker>
+    <marker id="applicability-gate-arrow-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#b42318"/></marker>
+    <marker id="applicability-gate-arrow-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#b45309"/></marker>
+    <marker id="applicability-gate-arrow-teal" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#087a70"/></marker>
+  </defs>
+
+  <rect class="bg" width="1440" height="810"/>
+  <rect width="1440" height="810" fill="url(#applicability-gate-dots)" opacity="0.6"/>
+
+  <text x="64" y="50" class="eyebrow">DECISION GATE  /  04</text>
+  <text x="64" y="92" class="title">Retrieved text still has to earn a recommendation</text>
+  <text x="64" y="121" class="subtitle">The gate reads status and version from the app-owned record, then checks the fix against this case. Every branch is deterministic.</text>
+  <text x="1376" y="50" class="topnote" text-anchor="end">SYNTHETIC PRINTER CASES  ·  8 SCENARIOS  ·  0 INCORRECT</text>
+  <line x1="64" y1="144" x2="1376" y2="144" class="rule"/>
+
+  <!-- pass spine -->
+  <line x1="290" y1="234" x2="290" y2="254" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+  <line x1="290" y1="318" x2="290" y2="350" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+  <line x1="290" y1="414" x2="290" y2="446" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+  <line x1="290" y1="510" x2="290" y2="542" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+  <line x1="290" y1="606" x2="290" y2="654" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+
+  <!-- fail branches -->
+  <line x1="360" y1="286" x2="560" y2="286" class="fail" marker-end="url(#applicability-gate-arrow-red)"/>
+  <line x1="360" y1="382" x2="560" y2="382" class="fail" marker-end="url(#applicability-gate-arrow-red)"/>
+  <line x1="360" y1="478" x2="560" y2="478" class="fail" marker-end="url(#applicability-gate-arrow-red)"/>
+  <line x1="360" y1="574" x2="560" y2="574" class="fail-ask" marker-end="url(#applicability-gate-arrow-amber)"/>
+
+  <!-- pass labels -->
+  <rect x="300" y="239" width="30" height="10" rx="2" class="label-bg"/>
+  <text x="315" y="247" class="label" text-anchor="middle">PASS</text>
+  <rect x="300" y="327" width="30" height="10" rx="2" class="label-bg"/>
+  <text x="315" y="335" class="label" text-anchor="middle">PASS</text>
+  <rect x="300" y="423" width="30" height="10" rx="2" class="label-bg"/>
+  <text x="315" y="431" class="label" text-anchor="middle">PASS</text>
+  <rect x="300" y="519" width="30" height="10" rx="2" class="label-bg"/>
+  <text x="315" y="527" class="label" text-anchor="middle">PASS</text>
+  <rect x="300" y="623" width="30" height="10" rx="2" class="label-bg"/>
+  <text x="315" y="631" class="label" text-anchor="middle">PASS</text>
+
+  <!-- fail labels -->
+  <rect x="468" y="268" width="28" height="10" rx="2" class="label-bg"/>
+  <text x="482" y="276" class="label" text-anchor="middle">FAIL</text>
+  <rect x="468" y="364" width="28" height="10" rx="2" class="label-bg"/>
+  <text x="482" y="372" class="label" text-anchor="middle">FAIL</text>
+  <rect x="468" y="460" width="28" height="10" rx="2" class="label-bg"/>
+  <text x="482" y="468" class="label" text-anchor="middle">FAIL</text>
+  <rect x="468" y="556" width="28" height="10" rx="2" class="label-bg"/>
+  <text x="482" y="564" class="label" text-anchor="middle">FAIL</text>
+
+  <!-- start -->
+  <rect x="160" y="178" width="260" height="56" rx="20" class="start"/>
+  <text x="290" y="202" class="name" text-anchor="middle">Meko search returns a fix</text>
+  <text x="290" y="219" class="sub" text-anchor="middle">candidate from shared knowledge</text>
+
+  <!-- diamonds -->
+  <polygon points="290,254 360,286 290,318 220,286" class="diamond"/>
+  <text x="290" y="283" class="name-sm" text-anchor="middle">Canonical</text>
+  <text x="290" y="297" class="name-sm" text-anchor="middle">record?</text>
+
+  <polygon points="290,350 360,382 290,414 220,382" class="diamond"/>
+  <text x="290" y="379" class="name-sm" text-anchor="middle">Status</text>
+  <text x="290" y="393" class="name-sm" text-anchor="middle">approved?</text>
+
+  <polygon points="290,446 360,478 290,510 220,478" class="diamond"/>
+  <text x="290" y="475" class="name-sm" text-anchor="middle">Current</text>
+  <text x="290" y="489" class="name-sm" text-anchor="middle">version?</text>
+
+  <polygon points="290,542 360,574 290,606 220,574" class="diamond-focal"/>
+  <text x="290" y="571" class="name-sm" text-anchor="middle">Scope</text>
+  <text x="290" y="585" class="name-sm" text-anchor="middle">matches?</text>
+
+  <!-- outcomes (labels, not extra boxes) -->
+  <rect x="560" y="278" width="3" height="16" class="red"/>
+  <text x="574" y="284" class="outcome red">WITHHELD</text>
+  <text x="574" y="299" class="outcome-sub">NO CANONICAL RECORD</text>
+
+  <rect x="560" y="374" width="3" height="16" class="red"/>
+  <text x="574" y="380" class="outcome red">WITHHELD / ASK</text>
+  <text x="574" y="395" class="outcome-sub">WITHDRAWN · SUPERSEDED · PROPOSED</text>
+
+  <rect x="560" y="470" width="3" height="16" class="red"/>
+  <text x="574" y="476" class="outcome red">WITHHELD</text>
+  <text x="574" y="491" class="outcome-sub">STALE OR NOT CURRENT</text>
+
+  <rect x="560" y="566" width="3" height="16" class="amber"/>
+  <text x="574" y="572" class="outcome amber">ASK / WITHHELD</text>
+  <text x="574" y="587" class="outcome-sub">MODEL · FIRMWARE · PREREQUISITES</text>
+
+  <!-- recommend -->
+  <rect x="160" y="654" width="260" height="56" rx="20" class="end"/>
+  <text x="290" y="678" class="name teal" text-anchor="middle">Recommend the fix</text>
+  <text x="290" y="695" class="sub" text-anchor="middle">current · approved · in scope</text>
+
+  <!-- scope detail panel -->
+  <rect x="1000" y="198" width="376" height="420" rx="8" class="panel"/>
+  <text x="1024" y="228" class="panel-label">WHY THIS IS NOT RETRIEVAL</text>
+  <text x="1024" y="258" class="panel-title">Authority first, scope second</text>
+
+  <text x="1024" y="296" class="panel-head">01  Canonical record</text>
+  <text x="1024" y="314" class="panel-copy">Read from the app-owned store, not from retrieval.</text>
+  <line x1="1024" y1="332" x2="1352" y2="332" class="hair"/>
+
+  <text x="1024" y="360" class="panel-head">02  Status + version</text>
+  <text x="1024" y="378" class="panel-copy">Withdrawn, superseded or proposed never passes.</text>
+  <text x="1024" y="393" class="panel-copy">The retrieved version must be current and approved.</text>
+  <line x1="1024" y1="411" x2="1352" y2="411" class="hair"/>
+
+  <text x="1024" y="439" class="panel-head">03  Scope checks</text>
+  <text x="1024" y="461" class="panel-mono">MODEL     case.model = fix.model</text>
+  <text x="1024" y="480" class="panel-mono">FIRMWARE  present + in supportedFirmware</text>
+  <text x="1024" y="499" class="panel-mono">REQS      every prerequisite confirmed</text>
+  <line x1="1024" y1="519" x2="1352" y2="519" class="hair"/>
+
+  <text x="1024" y="548" class="panel-copy">Missing firmware asks. A mismatch withholds.</text>
+  <text x="1024" y="570" class="panel-copy">The answer is assembled from the canonical record only.</text>
+  <text x="1024" y="596" class="panel-mono">retrieved text is data, never authority</text>
+
+  <!-- legend -->
+  <line x1="64" y1="742" x2="1376" y2="742" class="rule"/>
+  <text x="64" y="762" class="legend-title">LEGEND</text>
+  <line x1="140" y1="758" x2="168" y2="758" class="pass" marker-end="url(#applicability-gate-arrow)"/>
+  <text x="176" y="762" class="legend">pass</text>
+  <line x1="246" y1="758" x2="274" y2="758" class="fail" marker-end="url(#applicability-gate-arrow-red)"/>
+  <text x="282" y="762" class="legend">withhold</text>
+  <line x1="374" y1="758" x2="402" y2="758" class="fail-ask" marker-end="url(#applicability-gate-arrow-amber)"/>
+  <text x="410" y="762" class="legend">ask / withhold</text>
+  <text x="1376" y="762" class="legend" text-anchor="end">ShiftRelay · contextcon</text>
+</svg>

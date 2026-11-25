@@ -20,12 +20,19 @@ Suggested topics: `meko`, `mcp`, `yugabytedb`, `typescript`, `react`, `shared-me
 
 ## Video
 
-- [x] Under five minutes: one 2:06 submission cut, combining the 1:08 narrated explainer and the 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
-- [x] One continuous video with a handoff card and clean, re-set walkthrough captions; the standalone capture remains as supporting evidence.
+- [x] Under five minutes: one 3:01 submission cut, combining the 1:08 narrated explainer, a 0:54 architecture chapter, and the 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
+- [x] One continuous video with four architecture diagrams, a handoff card and clean, re-set walkthrough captions; the standalone capture remains as supporting evidence.
 - [x] Synthetic cases visibly labeled on every decision card.
 - [x] No API key, account identity, private transcript or owner email on screen.
 - [x] Shows Friday's approval, Monday's fresh-session question, a withdrawn-fix withhold and the measured comparison.
 - [ ] Upload where the operator prefers; paste the link into Devpost.
+
+## Presentation
+
+- [x] Pitch deck: `docs/ShiftRelay-Pitch-Deck.pdf`, 11 slides, 526 KB (under the 50 MB limit).
+- [x] Source: `docs/deck/index.html`; diagram assets: `docs/diagrams/`.
+- [x] Covers problem, relay, four architecture views, measured results, Meko limits and demo links.
+- [x] No owner identity, credential or private transcript in the deck.
 
 ## Devpost
 
@@ -35,7 +42,7 @@ Suggested topics: `meko`, `mcp`, `yugabytedb`, `typescript`, `react`, `shared-me
 - [ ] Paste `docs/DEVPOST_PROJECT_STORY.md`.
 - [ ] Built with: Meko Context Engine, YugabyteDB (via Meko), MCP, TypeScript, React, Vite, Node.js.
 - [ ] Link the public repository and video.
-- [ ] Include architecture and measured results.
+- [ ] Include architecture and measured results; attach `docs/ShiftRelay-Pitch-Deck.pdf`.
 - [ ] Confirm the special-award shared-memory path is visible in the video and story.
 
 ## Verification before submission

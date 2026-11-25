@@ -1,6 +1,6 @@
 # Session tool discovery
 
-Checked 2026-11-24 before building.
+Checked 2026-11-24 before building; updated 2026-11-25 for the diagram and deck pass.
 
 | Tool or service | Status | What was used |
 | --- | --- | --- |
@@ -11,10 +11,10 @@ Checked 2026-11-24 before building.
 | VideoWright | **Not available** in this session | No binary, MCP tool or skill found. A Remotion explainer and a genuine Chromium capture were produced instead |
 | Remotion | **Available** via the supplied `remotion-video-skill` | Six-scene 1080p explainer with scene transitions and local narration |
 | Piper TTS | **Available** locally after `uv tool install piper-tts` | `en_GB-jenny_dioco-medium` British female voice; no hosted API |
-| diagram-design | **Not available** in this session | No such skill or tool found. README diagram authored as SVG using the local architecture-diagram design guidance |
-| Playwright | **Not installed locally** | Chromium and ffmpeg were available through the session tooling for visual checks |
-| Chromium | **Available** at `/root/.hermes/tools/chromium-1208/chrome-linux64/chrome` | Headless screenshots and CDP-driven UI checks |
-| ffmpeg | **Available** | UI capture assembly, combined 2:06 cut, caption lower third, final H.264/AAC encode and audio level check |
+| diagram-design | **Available** at `/root/diagram-design` (v2.6) | Four HTML/SVG diagrams using the project palette. `self_check.py` and `verify_geometry.py` passed |
+| Playwright | **Not installed locally** | The skill's PNG export helper was unavailable; PNGs were rasterized from SVG with headless Chromium instead |
+| Chromium | **Available** at `/root/.hermes/tools/chromium-1248/chrome-linux64/chrome` | Headless screenshots, SVG-to-PNG at 1440×810, and 16:9 PDF deck export |
+| ffmpeg | **Available** | UI capture assembly, combined 3:01 cut, architecture chapter, caption lower third, final H.264/AAC encode and audio level check |
 | Local MCP server `jnaapakam` | Configured but unrelated | Not used |
 
 No external model key was used. `MODEL_PROVIDER=deterministic`; the optional OpenRouter adapter stays disabled unless the operator supplies a key.

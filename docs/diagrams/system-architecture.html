@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShiftRelay system architecture</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f4f6f9; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #101828; }
+    .frame { max-width: 1440px; margin: 0 auto; }
+    svg { display: block; width: 100%; min-width: 1080px; }
+    @media print { svg { min-width: 0; } }
+  </style>
+</head>
+<body>
+<div class="frame">
+<svg viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="system-architecture-title system-architecture-desc">
+  <title id="system-architecture-title">ShiftRelay system architecture</title>
+  <desc id="system-architecture-desc">Architecture diagram showing the React console, the ShiftRelay Node API and deterministic gate, the app-owned canonical control store, and Meko's MCP, shared knowledge, conversations and artifact services.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4f6f9; }
+      .dot { fill: rgba(11,30,75,0.09); }
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 35px; font-weight: 700; letter-spacing: -1.1px; fill: #0b1e4b; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14.5px; fill: #52647c; }
+      .eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 2px; fill: #087a70; }
+      .topnote { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; letter-spacing: 1.3px; fill: #667085; }
+      .rule { stroke: #d7e0eb; stroke-width: 1; }
+      .zone { fill: rgba(11,30,75,0.018); stroke: rgba(11,30,75,0.15); stroke-width: 1; }
+      .zone-label-bg { fill: #f4f6f9; }
+      .zone-label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 1.7px; fill: #667085; }
+      .node { fill: #ffffff; stroke: #c6d2e1; stroke-width: 1; }
+      .node-strong { fill: #ffffff; stroke: #0b1e4b; stroke-width: 1.2; }
+      .node-focal { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.5; }
+      .node-store { fill: rgba(11,30,75,0.035); stroke: #667085; stroke-width: 1; }
+      .node-ext { fill: rgba(11,30,75,0.025); stroke: #8a99ad; stroke-width: 1; }
+      .tag { fill: none; stroke: rgba(11,30,75,0.24); stroke-width: 0.8; }
+      .tag-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 7.5px; font-weight: 600; letter-spacing: 1px; fill: #667085; }
+      .name { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 650; fill: #101828; }
+      .sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; fill: #52647c; }
+      .micro { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #667085; }
+      .accent-text { fill: #087a70; }
+      .arrow { fill: none; stroke: #52647c; stroke-width: 1.15; }
+      .arrow-link { fill: none; stroke: #1d4ed8; stroke-width: 1.2; }
+      .arrow-accent { fill: none; stroke: #087a70; stroke-width: 1.4; }
+      .arrow-return { fill: none; stroke: #52647c; stroke-width: 1; stroke-dasharray: 5,4; }
+      .label-bg { fill: #f4f6f9; }
+      .label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; letter-spacing: 0.5px; fill: #52647c; }
+      .label-link { fill: #1d4ed8; }
+      .label-accent { fill: #087a70; }
+      .legend { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      .legend-title { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.7px; fill: #667085; }
+      .note { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #52647c; }
+    </style>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" class="dot"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#52647c"/></marker>
+    <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1d4ed8"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#087a70"/></marker>
+  </defs>
+
+  <rect class="bg" width="1440" height="810"/>
+  <rect width="1440" height="810" fill="url(#dots)" opacity="0.6"/>
+
+  <text x="64" y="50" class="eyebrow">SYSTEM ARCHITECTURE  /  01</text>
+  <text x="64" y="92" class="title">Three boundaries, one decision path</text>
+  <text x="64" y="121" class="subtitle">Meko carries context between sessions. The app owns canonical status and decides whether a retrieved fix may be applied.</text>
+  <text x="1376" y="50" class="topnote" text-anchor="end">SYNTHETIC PRINTER CASES  ·  MCP 2025-06-18</text>
+  <line x1="64" y1="144" x2="1376" y2="144" class="rule"/>
+
+  <!-- zones -->
+  <rect x="64" y="178" width="284" height="496" rx="8" class="zone"/>
+  <rect x="78" y="174" width="106" height="14" rx="2" class="zone-label-bg"/>
+  <text x="80" y="185" class="zone-label">FIELD SHIFT</text>
+
+  <rect x="388" y="178" width="620" height="496" rx="8" class="zone"/>
+  <rect x="402" y="174" width="126" height="14" rx="2" class="zone-label-bg"/>
+  <text x="404" y="185" class="zone-label">SHIFTRELAY APP</text>
+
+  <rect x="1048" y="178" width="328" height="496" rx="8" class="zone"/>
+  <rect x="1062" y="174" width="164" height="14" rx="2" class="zone-label-bg"/>
+  <text x="1064" y="185" class="zone-label">MEKO SHARED CONTEXT</text>
+
+  <!-- arrows first -->
+  <path d="M 320 300 H 416" class="arrow-link" marker-end="url(#arrow-link)"/>
+  <path d="M 506 324 V 388" class="arrow" marker-end="url(#arrow)"/>
+  <path d="M 724 452 H 780" class="arrow-accent" marker-end="url(#arrow-accent)"/>
+  <path d="M 980 274 H 1064" class="arrow-link" marker-end="url(#arrow-link)"/>
+  <path d="M 980 312 H 1016 Q 1024 312 1024 320 V 578 Q 1024 586 1032 586 H 1064" class="arrow-return" marker-end="url(#arrow)"/>
+  <path d="M 1132 324 V 388" class="arrow" marker-end="url(#arrow)"/>
+  <path d="M 1292 324 V 388" class="arrow" marker-end="url(#arrow)"/>
+
+  <!-- arrow labels -->
+  <rect x="342" y="282" width="62" height="12" rx="2" class="label-bg"/>
+  <text x="373" y="291" class="label label-link" text-anchor="middle">HTTPS /API</text>
+  <rect x="514" y="342" width="54" height="12" rx="2" class="label-bg"/>
+  <text x="541" y="351" class="label" text-anchor="middle">RUN GATE</text>
+  <rect x="730" y="434" width="44" height="12" rx="2" class="label-bg"/>
+  <text x="752" y="443" class="label label-accent" text-anchor="middle">READ</text>
+  <rect x="986" y="256" width="72" height="12" rx="2" class="label-bg"/>
+  <text x="1022" y="265" class="label label-link" text-anchor="middle">MCP SESSION</text>
+  <rect x="1032" y="458" width="26" height="12" rx="2" class="label-bg"/>
+  <text x="1045" y="467" class="label" text-anchor="middle">REST</text>
+  <rect x="1138" y="344" width="70" height="12" rx="2" class="label-bg"/>
+  <text x="1173" y="353" class="label" text-anchor="middle">PROMOTE /</text>
+  <rect x="1138" y="358" width="54" height="12" rx="2" class="label-bg"/>
+  <text x="1165" y="367" class="label" text-anchor="middle">SEARCH</text>
+  <rect x="1298" y="344" width="66" height="12" rx="2" class="label-bg"/>
+  <text x="1331" y="353" class="label" text-anchor="middle">MESSAGE</text>
+
+  <!-- field node -->
+  <rect x="92" y="238" width="228" height="120" rx="6" class="node-ext"/>
+  <rect x="100" y="246" width="42" height="13" rx="2" class="tag"/>
+  <text x="121" y="255" class="tag-text" text-anchor="middle">REACT</text>
+  <text x="112" y="282" class="name">Technician console</text>
+  <text x="112" y="300" class="sub">intake · review · fresh session</text>
+  <text x="112" y="316" class="sub">evidence · synthetic fixtures</text>
+  <text x="112" y="340" class="micro">one branch, four roles, one browser</text>
+
+  <text x="112" y="410" class="eyebrow">SESSION BOUNDARY</text>
+  <text x="112" y="438" class="name">Friday · intake</text>
+  <text x="112" y="456" class="sub">capture case + transcript</text>
+  <text x="112" y="488" class="name">Monday · fresh session</text>
+  <text x="112" y="506" class="sub">new initialize + conversation</text>
+  <text x="112" y="522" class="sub">no memory except what was shared</text>
+
+  <!-- app nodes -->
+  <rect x="416" y="232" width="564" height="92" rx="6" class="node-strong"/>
+  <rect x="424" y="240" width="50" height="13" rx="2" class="tag"/>
+  <text x="449" y="249" class="tag-text" text-anchor="middle">SERVER</text>
+  <text x="436" y="274" class="name">Node API + MCP adapter</text>
+  <text x="436" y="292" class="sub">Express /api · one MCP initialize per session</text>
+  <text x="436" y="308" class="sub">secrets stay server-side · no browser key</text>
+
+  <rect x="416" y="388" width="308" height="128" rx="6" class="node-focal"/>
+  <rect x="424" y="396" width="56" height="13" rx="2" class="tag" stroke="rgba(8,122,112,0.45)"/>
+  <text x="452" y="405" class="tag-text accent-text" text-anchor="middle">DECISION</text>
+  <text x="436" y="430" class="name">Deterministic gate</text>
+  <text x="436" y="448" class="sub">status → version → model</text>
+  <text x="436" y="464" class="sub">→ firmware → prerequisites</text>
+  <text x="436" y="488" class="micro accent-text">retrieved text is data, never authority</text>
+
+  <rect x="780" y="388" width="200" height="128" rx="6" class="node-store"/>
+  <rect x="788" y="396" width="58" height="13" rx="2" class="tag"/>
+  <text x="817" y="405" class="tag-text" text-anchor="middle">APP-OWNED</text>
+  <text x="800" y="430" class="name">Canonical control</text>
+  <text x="800" y="446" class="name">store</text>
+  <text x="800" y="466" class="sub">status · version · revision</text>
+  <text x="800" y="482" class="sub">approver · supersedes</text>
+  <text x="800" y="502" class="micro">atomic rename · expected revision</text>
+
+  <text x="416" y="556" class="note">Case and decision evidence stay in the app store and in Meko.</text>
+  <text x="416" y="574" class="note">The browser receives a rendered decision, never a key.</text>
+  <text x="416" y="598" class="micro">APP CONTROL METADATA: fix id · status · version · expected revision · approver</text>
+
+  <!-- meko nodes -->
+  <rect x="1064" y="232" width="296" height="92" rx="6" class="node-strong"/>
+  <rect x="1072" y="240" width="38" height="13" rx="2" class="tag"/>
+  <text x="1091" y="249" class="tag-text" text-anchor="middle">MCP</text>
+  <text x="1084" y="274" class="name">Meko MCP endpoint</text>
+  <text x="1084" y="292" class="sub">mcp.mekodata.ai/mcp · stateless</text>
+  <text x="1084" y="308" class="sub">57 tools discovered · protocol 2025-06-18</text>
+
+  <rect x="1064" y="388" width="136" height="112" rx="6" class="node"/>
+  <text x="1080" y="414" class="name">Shared</text>
+  <text x="1080" y="430" class="name">knowledge</text>
+  <text x="1080" y="452" class="sub">memory_promote</text>
+  <text x="1080" y="468" class="sub">knowledgebase_</text>
+  <text x="1080" y="482" class="sub">search</text>
+
+  <rect x="1224" y="388" width="136" height="112" rx="6" class="node"/>
+  <text x="1240" y="414" class="name">Conversations</text>
+  <text x="1240" y="430" class="name">+ memories</text>
+  <text x="1240" y="452" class="sub">conversation_*</text>
+  <text x="1240" y="468" class="sub">memory_add</text>
+
+  <rect x="1064" y="548" width="296" height="76" rx="6" class="node"/>
+  <text x="1084" y="576" class="name">Artifacts</text>
+  <text x="1084" y="594" class="sub">REST · fixes/ · decisions/ · withdrawals/</text>
+  <text x="1084" y="610" class="sub">SHA-256 content hash · immutable</text>
+
+  <text x="1084" y="650" class="micro">All rows persist in Meko's managed YugabyteDB store.</text>
+
+  <!-- legend -->
+  <line x1="64" y1="722" x2="1376" y2="722" class="rule"/>
+  <text x="64" y="742" class="legend-title">LEGEND</text>
+  <line x1="140" y1="738" x2="168" y2="738" class="arrow-link" marker-end="url(#arrow-link)"/>
+  <text x="176" y="742" class="legend">browser / API call</text>
+  <line x1="300" y1="738" x2="328" y2="738" class="arrow-accent" marker-end="url(#arrow-accent)"/>
+  <text x="336" y="742" class="legend">canonical read</text>
+  <line x1="464" y1="738" x2="492" y2="738" class="arrow-return" marker-end="url(#arrow)"/>
+  <text x="500" y="742" class="legend">artifact / async</text>
+  <rect x="644" y="733" width="14" height="10" rx="2" class="node-focal"/>
+  <text x="666" y="742" class="legend">decision point</text>
+  <rect x="790" y="733" width="14" height="10" rx="2" class="node-store"/>
+  <text x="812" y="742" class="legend">app-owned state</text>
+  <text x="1376" y="742" class="legend" text-anchor="end">ShiftRelay · contextcon</text>
+</svg>
+</div>
+</body>
+</html>

@@ -72,10 +72,20 @@ Date: 2026-11-24
 - Built a **1:08** 1920×1080 Remotion explainer with six scenes: hook, problem, four-step flow, gate decisions, measured results, close. Source: `video/`.
 - Narration is local Piper (`en_GB-jenny_dioco-medium`, British female), six lines aligned to scene starts; no hosted TTS or external model key.
 - Preserved the genuine 0:56 UI walkthrough as `docs/demo/shiftrelay-walkthrough.mp4`; the submission cut is one 2:06 video at `docs/demo/shiftrelay-demo.mp4` (23 MB, H.264/AAC).
-- Combined the cuts with a 2.4-second handoff card. Re-set the walkthrough's clipped burned-in captions in a 128px lower third, normalized it to 1080p, and kept the walkthrough section silent.
+- Combined the cuts with a 2.4-second handoff card. Re-set the walkthrough's clipped burned-in captions in a 128px lower third, normalized it to 1080p, and kept the walkthrough section silent in that cut.
 - Every decision card is labeled synthetic; no owner identity, credential or attribution footer appears in the video or docs.
 - Updated README, demo storyboard, tools and built-with docs; public repository at <https://github.com/yablokolabs/shiftrelay>.
 
+## M5 — detailed architecture, extended demo and pitch deck (complete)
+
+Date: 2026-11-25
+
+- Added four detailed diagrams: system architecture, Friday approval sequence, Monday fresh-session sequence and the deterministic gate. Source HTML/SVG/PNG: `docs/diagrams/`; notes: `docs/ARCHITECTURE.md`.
+- Produced with Diagram Design 2.6 from the local checkout at `/root/diagram-design`, using the console palette. PNGs were rasterized at 1440×810 with headless Chromium because the skill's Playwright-based export helper was unavailable.
+- Extended the updated animated/music demo with a **0:54** architecture chapter and four local Piper narration lines. The combined cut is now **3:01**, still under five minutes.
+- Built an 11-slide pitch deck at `docs/ShiftRelay-Pitch-Deck.pdf` (526 KB), with source at `docs/deck/index.html`.
+- Updated README, demo, publishing, tools and built-with docs; no owner identity, credential or attribution footer added.
+
 ### Next action
 
-Submission-ready. Optional: upload the 2:06 combined cut to the operator's preferred host and link it from the Devpost entry.
+Submission-ready. Optional: upload the 3:01 combined cut to the operator's preferred host and link it from the Devpost entry; attach the PDF deck.

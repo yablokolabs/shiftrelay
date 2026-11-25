@@ -30,7 +30,8 @@ The rule that makes it safe: **retrieved content is data, never authority.** Sta
 - Treatment: 8/8 expected outcomes, 2 recommendations, 0 incorrect recommendations, 1 question, 5 withheld.
 - All 7 control checks pass, including live withdrawal, delayed indexing, superseded version, duplicate approval and 16/16 distinct sessions.
 - A duplicate approval is rejected and leaves exactly one approval event.
-- The UI makes the decision trace readable in about two minutes, with session ids, retrieval source, canonical status and rule checks.
+- The architecture is documented as four focused diagrams, not one overloaded canvas: system boundaries, Friday approval, Monday fresh session and the gate.
+- The 3:01 demo makes the decision trace readable, with four architecture diagrams, session ids, retrieval source, canonical status and rule checks.
 
 ## What we learned
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monday fresh-session path</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f4f6f9; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #101828; }
+    .frame { max-width: 1440px; margin: 0 auto; }
+    svg { display: block; width: 100%; min-width: 1080px; }
+    @media print { svg { min-width: 0; } }
+  </style>
+</head>
+<body>
+<div class="frame">
+<svg viewBox="0 0 1440 810" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fresh-session-title fresh-session-desc">
+  <title id="fresh-session-title">Monday fresh-session path</title>
+  <desc id="fresh-session-desc">Sequence diagram showing a new MCP session and conversation retrieving a withdrawn fix, resolving the canonical record, and withholding the fix at the deterministic gate.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4f6f9; }
+      .dot { fill: rgba(11,30,75,0.09); }
+      .title { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 35px; font-weight: 700; letter-spacing: -1.1px; fill: #0b1e4b; }
+      .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14.5px; fill: #52647c; }
+      .eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 2px; fill: #087a70; }
+      .topnote { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9.5px; letter-spacing: 1.3px; fill: #667085; }
+      .rule { stroke: #d7e0eb; stroke-width: 1; }
+      .lifeline { stroke: rgba(11,30,75,0.20); stroke-width: 1; stroke-dasharray: 3,4; }
+      .actor { fill: #ffffff; stroke: #c6d2e1; stroke-width: 1; }
+      .actor-focal { fill: rgba(15,157,143,0.075); stroke: #087a70; stroke-width: 1.4; }
+      .actor-ext { fill: rgba(11,30,75,0.025); stroke: #8a99ad; stroke-width: 1; }
+      .tag { fill: none; stroke: rgba(11,30,75,0.24); stroke-width: 0.8; }
+      .tag-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 7.5px; font-weight: 600; letter-spacing: 1px; fill: #667085; }
+      .name { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 650; fill: #101828; }
+      .sub { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 9px; fill: #52647c; }
+      .activation { fill: rgba(11,30,75,0.055); stroke: #667085; stroke-width: 0.8; }
+      .msg { fill: none; stroke: #52647c; stroke-width: 1.2; }
+      .msg-link { fill: none; stroke: #1d4ed8; stroke-width: 1.2; }
+      .msg-return { fill: none; stroke: #52647c; stroke-width: 1.1; stroke-dasharray: 5,4; }
+      .msg-accent { fill: none; stroke: #087a70; stroke-width: 1.6; }
+      .msg-accent-return { fill: none; stroke: #087a70; stroke-width: 1.35; stroke-dasharray: 5,4; }
+      .label-bg { fill: #f4f6f9; }
+      .label { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; letter-spacing: 0.5px; fill: #52647c; }
+      .label-link { fill: #1d4ed8; }
+      .label-accent { fill: #087a70; }
+      .phase { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.4px; fill: #667085; }
+      .note { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 11.5px; fill: #52647c; }
+      .legend { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8.5px; fill: #52647c; }
+      .legend-title { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 8px; font-weight: 600; letter-spacing: 1.7px; fill: #667085; }
+    </style>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" class="dot"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#52647c"/></marker>
+    <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1d4ed8"/></marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#087a70"/></marker>
+  </defs>
+
+  <rect class="bg" width="1440" height="810"/>
+  <rect width="1440" height="810" fill="url(#dots)" opacity="0.6"/>
+
+  <text x="64" y="50" class="eyebrow">SEQUENCE  /  03  ·  MONDAY</text>
+  <text x="64" y="92" class="title">A fresh session retrieves, then withholds</text>
+  <text x="64" y="121" class="subtitle">A new MCP initialize and a new conversation return an old fix. The canonical record says withdrawn, so the gate refuses it.</text>
+  <text x="1376" y="50" class="topnote" text-anchor="end">SYNTHETIC PRINTER CASES  ·  CASE-002 · P100 · FIRMWARE MISSING</text>
+  <line x1="64" y1="144" x2="1376" y2="144" class="rule"/>
+
+  <!-- lifelines -->
+  <line x1="128" y1="250" x2="128" y2="686" class="lifeline"/>
+  <line x1="480" y1="250" x2="480" y2="686" class="lifeline"/>
+  <line x1="832" y1="250" x2="832" y2="686" class="lifeline"/>
+  <line x1="1184" y1="250" x2="1184" y2="686" class="lifeline"/>
+
+  <!-- activation bars -->
+  <rect x="476" y="300" width="8" height="350" class="activation"/>
+  <rect x="1180" y="350" width="8" height="100" class="activation"/>
+  <rect x="828" y="500" width="8" height="50" class="activation"/>
+
+  <!-- phase labels -->
+  <text x="64" y="292" class="phase">OPEN</text>
+  <text x="64" y="442" class="phase">RETRIEVE</text>
+  <text x="64" y="592" class="phase">DECIDE</text>
+
+  <!-- messages -->
+  <line x1="128" y1="300" x2="476" y2="300" class="msg-link" marker-end="url(#arrow-link)"/>
+  <line x1="484" y1="350" x2="1180" y2="350" class="msg" marker-end="url(#arrow)"/>
+  <line x1="484" y1="400" x2="1180" y2="400" class="msg" marker-end="url(#arrow)"/>
+  <line x1="1180" y1="450" x2="484" y2="450" class="msg-return" marker-end="url(#arrow)"/>
+  <line x1="484" y1="500" x2="828" y2="500" class="msg" marker-end="url(#arrow)"/>
+  <line x1="828" y1="550" x2="484" y2="550" class="msg-return" marker-end="url(#arrow)"/>
+  <path d="M 488 600 H 536 V 624 H 488" class="msg-accent" marker-end="url(#arrow-accent)"/>
+  <line x1="480" y1="650" x2="128" y2="650" class="msg-accent-return" marker-end="url(#arrow-accent)"/>
+
+  <!-- labels -->
+  <rect x="248" y="282" width="112" height="12" rx="2" class="label-bg"/>
+  <text x="304" y="291" class="label label-link" text-anchor="middle">DIAGNOSE CASE-002</text>
+
+  <rect x="884" y="332" width="96" height="12" rx="2" class="label-bg"/>
+  <text x="932" y="341" class="label" text-anchor="middle">NEW SESSION</text>
+
+  <rect x="884" y="382" width="96" height="12" rx="2" class="label-bg"/>
+  <text x="932" y="391" class="label" text-anchor="middle">KB_SEARCH</text>
+
+  <rect x="884" y="432" width="112" height="12" rx="2" class="label-bg"/>
+  <text x="940" y="441" class="label" text-anchor="middle">RETRIEVED v1</text>
+
+  <rect x="608" y="482" width="112" height="12" rx="2" class="label-bg"/>
+  <text x="664" y="491" class="label" text-anchor="middle">RESOLVE RECORD</text>
+
+  <rect x="608" y="532" width="96" height="12" rx="2" class="label-bg"/>
+  <text x="656" y="541" class="label" text-anchor="middle">WITHDRAWN</text>
+
+  <rect x="546" y="590" width="88" height="12" rx="2" class="label-bg"/>
+  <text x="590" y="599" class="label label-accent" text-anchor="middle">STATUS FAIL</text>
+
+  <rect x="248" y="632" width="88" height="12" rx="2" class="label-bg"/>
+  <text x="292" y="641" class="label label-accent" text-anchor="middle">WITHHELD</text>
+
+  <!-- actors -->
+  <rect x="48" y="188" width="160" height="62" rx="6" class="actor-ext"/>
+  <rect x="56" y="196" width="40" height="13" rx="2" class="tag"/>
+  <text x="76" y="205" class="tag-text" text-anchor="middle">FIELD</text>
+  <text x="128" y="229" class="name" text-anchor="middle">Technician console</text>
+  <text x="128" y="244" class="sub" text-anchor="middle">fresh session</text>
+
+  <rect x="400" y="188" width="160" height="62" rx="6" class="actor-focal"/>
+  <rect x="408" y="196" width="40" height="13" rx="2" class="tag" stroke="rgba(8,122,112,0.45)"/>
+  <text x="428" y="205" class="tag-text" text-anchor="middle">APP</text>
+  <text x="480" y="229" class="name" text-anchor="middle">ShiftRelay API</text>
+  <text x="480" y="244" class="sub" text-anchor="middle">gate + MCP client</text>
+
+  <rect x="752" y="188" width="160" height="62" rx="6" class="actor"/>
+  <rect x="760" y="196" width="54" height="13" rx="2" class="tag"/>
+  <text x="787" y="205" class="tag-text" text-anchor="middle">APP-OWNED</text>
+  <text x="832" y="229" class="name" text-anchor="middle">Canonical store</text>
+  <text x="832" y="244" class="sub" text-anchor="middle">status · revision</text>
+
+  <rect x="1104" y="188" width="160" height="62" rx="6" class="actor"/>
+  <rect x="1112" y="196" width="38" height="13" rx="2" class="tag"/>
+  <text x="1131" y="205" class="tag-text" text-anchor="middle">MEKO</text>
+  <text x="1184" y="229" class="name" text-anchor="middle">Meko shared context</text>
+  <text x="1184" y="244" class="sub" text-anchor="middle">MCP + artifacts</text>
+
+  <text x="64" y="716" class="note">The retrieved snapshot is evidence of what was shared. The canonical record is the authority; a withdrawn fix stays withheld even when retrieval returns it.</text>
+
+  <!-- legend -->
+  <line x1="64" y1="742" x2="1376" y2="742" class="rule"/>
+  <text x="64" y="762" class="legend-title">LEGEND</text>
+  <line x1="140" y1="758" x2="168" y2="758" class="msg-link" marker-end="url(#arrow-link)"/>
+  <text x="176" y="762" class="legend">request</text>
+  <line x1="258" y1="758" x2="286" y2="758" class="msg-return" marker-end="url(#arrow)"/>
+  <text x="294" y="762" class="legend">return</text>
+  <line x1="376" y1="758" x2="404" y2="758" class="msg-accent-return" marker-end="url(#arrow-accent)"/>
+  <text x="412" y="762" class="legend">gate outcome</text>
+  <rect x="536" y="753" width="4" height="14" class="activation"/>
+  <text x="548" y="762" class="legend">activation</text>
+  <text x="1376" y="762" class="legend" text-anchor="end">ShiftRelay · contextcon</text>
+</svg>
+</div>
+</body>
+</html>

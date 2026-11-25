@@ -8,7 +8,17 @@ A ContextCon entry for **Never Solve It Twice**. Field support agents reuse tech
 
 ShiftRelay is a real Meko integration: intake conversations, case and fix memories, approved shared knowledge, and decision artifacts all move through verified MCP and REST operations. The demo runs on frozen synthetic printer cases.
 
-![ShiftRelay architecture](docs/architecture.svg)
+## Architecture
+
+[![ShiftRelay system architecture](docs/diagrams/system-architecture.png)](docs/diagrams/system-architecture.svg)
+
+The console talks only to the Node API. The API talks to Meko and reads the app-owned canonical store; the deterministic gate — not the retrieved text — decides whether a fix may be applied.
+
+- [System architecture](docs/diagrams/system-architecture.svg) · [PNG](docs/diagrams/system-architecture.png)
+- [Friday approval trace](docs/diagrams/approval-sequence.svg) · [PNG](docs/diagrams/approval-sequence.png)
+- [Monday fresh-session trace](docs/diagrams/fresh-session-sequence.svg) · [PNG](docs/diagrams/fresh-session-sequence.png)
+- [Deterministic gate](docs/diagrams/applicability-gate.svg) · [PNG](docs/diagrams/applicability-gate.png)
+- [Detailed architecture notes](docs/ARCHITECTURE.md)
 
 ## What it does
 
@@ -123,8 +133,10 @@ assets/          Supplied ShiftRelay logo and icon
 
 [![ShiftRelay demo](docs/demo/poster.jpg)](docs/demo/shiftrelay-demo.mp4)
 
-- One continuous submission demo (2:06, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4) — 1:08 narrated explainer, a short handoff, then the 0:56 genuine Chromium walkthrough with clean captions.
+- One continuous submission demo (3:01, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4) — 1:08 narrated explainer, a 0:54 architecture chapter with four diagrams, a short handoff, then the 0:56 genuine Chromium walkthrough with clean captions.
 - Standalone genuine UI capture (0:56, silent): [`docs/demo/shiftrelay-walkthrough.mp4`](docs/demo/shiftrelay-walkthrough.mp4) — the component used in the combined cut.
+- Pitch deck (PDF, 11 slides, 526 KB): [`docs/ShiftRelay-Pitch-Deck.pdf`](docs/ShiftRelay-Pitch-Deck.pdf) — problem, relay, four architecture views, measured results, Meko limits and demo links.
+- Deck source and diagram set: [`docs/deck/index.html`](docs/deck/index.html) · [`docs/diagrams/`](docs/diagrams/)
 - Demo storyboard, narration and recording notes: [`docs/DEMO.md`](docs/DEMO.md)
 - Meko contract and observed operations: [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md)
 - Unsupported features: [`docs/UNSUPPORTED.md`](docs/UNSUPPORTED.md)

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShiftRelay — pitch deck</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0b1e4b;
+    --navy-2: #14306d;
+    --teal: #0f9d8f;
+    --teal-dark: #087a70;
+    --teal-soft: #e6f7f4;
+    --orange: #f4a21a;
+    --bg: #f4f6f9;
+    --ink: #101828;
+    --muted: #667085;
+    --line: #dfe6ef;
+    --white: #ffffff;
+    --green: #0f7a5c;
+    --red: #b42318;
+    --amber: #b45309;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  html, body { background: #fff; color: var(--ink); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide {
+    position: relative; width: 1280px; height: 720px; overflow: hidden;
+    background: var(--bg); page-break-after: always; break-after: page;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .pad { padding: 58px 72px; }
+  .eyebrow { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--teal-dark); }
+  h1 { font-size: 54px; line-height: 1.02; letter-spacing: -2.1px; font-weight: 700; color: var(--navy); }
+  h2 { font-size: 38px; line-height: 1.08; letter-spacing: -1.3px; font-weight: 700; color: var(--navy); }
+  h3 { font-size: 20px; line-height: 1.24; letter-spacing: -0.3px; font-weight: 650; color: var(--ink); }
+  p { font-size: 17px; line-height: 1.5; color: var(--muted); }
+  .small { font-size: 13px; line-height: 1.45; color: var(--muted); }
+  .mono { font-family: var(--mono); }
+  .brand { font-size: 21px; font-weight: 750; letter-spacing: -0.5px; color: var(--navy); }
+  .brand span { color: var(--teal); }
+  .topline { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 13px; }
+  .topnote { font-family: var(--mono); font-size: 9px; letter-spacing: 1.8px; color: var(--muted); }
+  .foot { position: absolute; left: 72px; right: 72px; bottom: 27px; display: flex; align-items: center; justify-content: space-between; font-family: var(--mono); font-size: 8.5px; letter-spacing: 1.2px; color: #8a99ad; }
+  .slide-no { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; color: #8a99ad; }
+
+  /* cover + close */
+  .dark { background: #07162e; color: #f8fafc; }
+  .dark .brand { color: #f8fafc; }
+  .dark .brand span { color: #7dd3c7; }
+  .dark .topnote, .dark .foot, .dark .slide-no { color: #8fa3bd; }
+  .dark .topline { border-color: rgba(125,211,199,0.24); }
+  .dark h1 { color: #f8fafc; }
+  .dark h1 em { font-style: normal; color: #7dd3c7; }
+  .dark p { color: #b4c2d5; }
+  .cover h1 { font-size: 70px; line-height: 0.97; letter-spacing: -3.0px; max-width: 920px; margin-top: 64px; }
+  .cover .sub { margin-top: 26px; max-width: 840px; font-size: 23px; line-height: 1.42; color: #b4c2d5; }
+  .cover .tags { display: flex; gap: 10px; margin-top: 34px; flex-wrap: wrap; }
+  .tag { border: 1px solid rgba(125,211,199,0.32); border-radius: 999px; padding: 8px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 1.2px; color: #bdeee8; }
+  .cover .rule { width: 96px; height: 4px; background: var(--teal); margin-top: 38px; }
+  .cover .meta { position: absolute; left: 72px; bottom: 64px; display: flex; gap: 28px; font-family: var(--mono); font-size: 9px; letter-spacing: 1.4px; color: #8fa3bd; }
+  .close h1 { font-size: 62px; max-width: 980px; margin-top: 90px; }
+  .close .sub { margin-top: 26px; max-width: 840px; font-size: 22px; line-height: 1.45; color: #b4c2d5; }
+  .close .links { display: flex; gap: 12px; margin-top: 34px; }
+  .link { border: 1px solid rgba(125,211,199,0.35); border-radius: 8px; padding: 12px 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.8px; color: #d8f7f2; }
+  .link strong { color: #7dd3c7; font-weight: 600; }
+
+  /* problem */
+  .problem h1 { max-width: 980px; margin-top: 34px; }
+  .problem .lede { max-width: 930px; margin-top: 18px; }
+  .problem-grid { display: grid; grid-template-columns: 1.08fr 1fr 0.94fr; gap: 18px; margin-top: 42px; }
+  .problem-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 24px 22px 22px; min-height: 250px; }
+  .problem-card .n { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: var(--teal-dark); }
+  .problem-card h3 { margin-top: 30px; font-size: 22px; }
+  .problem-card p { margin-top: 12px; font-size: 15px; }
+  .problem-card .quote { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10px; line-height: 1.5; color: var(--navy); }
+  .problem .bottom-rule { margin-top: 28px; border-left: 3px solid var(--teal); padding: 9px 0 9px 16px; font-size: 20px; font-weight: 650; color: var(--navy); }
+
+  /* product */
+  .product h1 { max-width: 980px; margin-top: 30px; }
+  .product .lede { max-width: 900px; margin-top: 16px; }
+  .steps { display: grid; grid-template-columns: 1.08fr 0.96fr 0.96fr 1.08fr; gap: 12px; margin-top: 42px; }
+  .step { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px 18px; min-height: 220px; }
+  .step:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: #9fb0c4; font-size: 18px; z-index: 2; }
+  .step .n { font-family: var(--mono); font-size: 10px; letter-spacing: 1.8px; color: var(--teal-dark); }
+  .step h3 { margin-top: 28px; font-size: 18px; }
+  .step p { margin-top: 10px; font-size: 13.5px; line-height: 1.45; }
+  .product .note { margin-top: 30px; display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .product .note div { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--muted); }
+  .product .note b { color: var(--navy); }
+
+  /* diagram slides */
+  .diagram { background: #f4f6f9; }
+  .diagram img { position: absolute; left: 40px; top: 18px; width: 1200px; height: 675px; display: block; border: 1px solid #d7e0eb; background: #f4f6f9; }
+  .diagram .plate { position: absolute; right: 42px; bottom: 9px; font-family: var(--mono); font-size: 8px; letter-spacing: 1.4px; color: #8a99ad; }
+
+  /* evidence */
+  .evidence h1 { margin-top: 28px; }
+  .evidence .lede { margin-top: 14px; }
+  .metrics { display: grid; grid-template-columns: 1.15fr 1.1fr 0.9fr 0.9fr 0.95fr; gap: 10px; margin-top: 30px; }
+  .metric { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 16px 15px; }
+  .metric .v { font-size: 34px; line-height: 1; letter-spacing: -1.4px; font-weight: 750; color: var(--navy); }
+  .metric .l { margin-top: 8px; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.7px; color: var(--muted); line-height: 1.45; }
+  .metric.good .v { color: var(--green); }
+  .metric.warn .v { color: var(--amber); }
+  .results { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 0; margin-top: 26px; border-top: 1px solid var(--line); }
+  .result-row { display: contents; }
+  .result-row div { padding: 9px 8px; border-bottom: 1px solid var(--line); font-size: 12px; }
+  .result-head div { font-family: var(--mono); font-size: 8px; letter-spacing: 1.1px; color: var(--muted); padding-top: 10px; padding-bottom: 8px; }
+  .result-row .arm { color: var(--muted); font-family: var(--mono); font-size: 9px; }
+  .result-row .out { font-weight: 650; font-size: 11px; }
+  .result-row .out.ok { color: var(--green); }
+  .result-row .out.hold { color: var(--red); }
+  .result-row .out.ask { color: var(--amber); }
+  .evidence .fine { margin-top: 18px; font-family: var(--mono); font-size: 8.5px; line-height: 1.6; color: var(--muted); }
+
+  /* meko */
+  .meko h1 { margin-top: 28px; max-width: 920px; }
+  .meko .cols { display: grid; grid-template-columns: 1.06fr 0.94fr; gap: 42px; margin-top: 30px; }
+  .meko h3 { font-size: 17px; color: var(--navy); }
+  .meko .list { margin-top: 14px; }
+  .meko .item { display: grid; grid-template-columns: 18px 1fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.45; color: var(--muted); }
+  .meko .item b { color: var(--teal-dark); font-family: var(--mono); font-size: 10px; }
+  .meko .box { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px 17px; }
+  .meko .box + .box { margin-top: 12px; }
+  .meko .box p { font-size: 12.5px; line-height: 1.45; }
+  .meko .stamp { display: inline-block; margin-top: 10px; border: 1px solid #cfd7e4; border-radius: 4px; padding: 4px 7px; font-family: var(--mono); font-size: 8px; letter-spacing: 1px; color: var(--muted); }
+
+  /* demo */
+  .demo h1 { margin-top: 26px; }
+  .demo .grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 30px; margin-top: 26px; align-items: start; }
+  .demo .shot { width: 700px; height: 394px; object-fit: cover; border: 1px solid #cfd7e4; border-radius: 8px; display: block; }
+  .demo .bullets { margin-top: 4px; }
+  .demo .bullet { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.4; color: var(--muted); }
+  .demo .bullet b { color: var(--navy); font-family: var(--mono); font-size: 9px; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+  .demo .linkline { margin-top: 18px; font-family: var(--mono); font-size: 10px; line-height: 1.7; color: var(--teal-dark); }
+
+  @page { size: 13.333in 7.5in; margin: 0; }
+  @media print {
+    html, body { width: 1280px; background: #fff; }
+    .slide { page-break-after: always; break-after: page; }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 -->
+<section class="slide dark cover">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">CONTEXTCON · NEVER SOLVE IT TWICE</div></div>
+    <h1>What if the next shift started with what the <em>last shift learned?</em></h1>
+    <div class="sub">Technician-approved printer fixes, carried across support shifts by Meko shared context — with a deterministic gate that decides whether a retrieved fix actually applies.</div>
+    <div class="tags"><span class="tag">synthetic printer cases</span><span class="tag">Meko shared context</span><span class="tag">deterministic gate</span></div>
+    <div class="rule"></div>
+    <div class="meta"><span>SHIFTRELAY</span><span>FIELD SUPPORT</span><span>2026</span></div>
+  </div>
+  <div class="foot"><span>SYNTHETIC PRINTER CASES ONLY</span><span class="slide-no">01 / 11</span></div>
+</section>
+
+<!-- 02 -->
+<section class="slide problem">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">THE HANDOFF PROBLEM</div></div>
+    <h1>The ticket closes. The fix leaves with the shift.</h1>
+    <p class="lede">A field fix is only useful if the next agent can find it, trust it, and check that it applies to the current printer.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="n">01 / CONTINUITY</div>
+        <h3>Fixes vanish with the shift.</h3>
+        <p>The next agent starts from the static manual, even when a colleague solved the same symptom yesterday.</p>
+        <div class="quote">The knowledge exists. It just is not in the next session.</div>
+      </div>
+      <div class="problem-card">
+        <div class="n">02 / APPLICABILITY</div>
+        <h3>Firmware changes the answer.</h3>
+        <p>A fix approved for firmware 2.4 is not automatically approved for 2.3. Model and prerequisites matter too.</p>
+        <div class="quote">A matching symptom is not a matching fix.</div>
+      </div>
+      <div class="problem-card">
+        <div class="n">03 / AUTHORITY</div>
+        <h3>Retrieval is not approval.</h3>
+        <p>A promoted memory can be withdrawn or superseded and still come back from search. The old text is evidence, not permission.</p>
+        <div class="quote">Retrieved content is data. Never authority.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>SHIFTRELAY · SYNTHETIC PRINTER CASES</span><span class="slide-no">02 / 11</span></div>
+</section>
+
+<!-- 03 -->
+<section class="slide product">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">THE RELAY</div></div>
+    <h1>A relay, not another chatbot.</h1>
+    <p class="lede">One datapack. Three roles. Every decision in its own session.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01 / CAPTURE</div><h3>Intake writes the case.</h3><p>Transcript, model, firmware, symptom, site and prerequisites go to a Meko conversation and memory.</p></div>
+      <div class="step"><div class="n">02 / APPROVE</div><h3>A technician owns the learning.</h3><p>The proposal becomes an approved snapshot only with a named approver, the current revision, and a confirmed promotion.</p></div>
+      <div class="step"><div class="n">03 / RETRIEVE</div><h3>A fresh session asks Meko.</h3><p>New MCP initialize, new conversation, then knowledgebase_search. No reuse of the intake session.</p></div>
+      <div class="step"><div class="n">04 / GATE</div><h3>The app decides.</h3><p>Canonical status, current version, model, firmware and prerequisites. Recommend, ask, or withhold.</p></div>
+    </div>
+    <div class="note"><div><b>ONE DATAPACK</b> · shiftrelay</div><div><b>THREE ROLES</b> · intake · review · next shift</div><div><b>DISTINCT SESSIONS</b> · 16 / 16</div></div>
+  </div>
+  <div class="foot"><span>SHIFTRELAY · SYNTHETIC PRINTER CASES</span><span class="slide-no">03 / 11</span></div>
+</section>
+
+<!-- 04 -->
+<section class="slide diagram">
+  <img src="../diagrams/system-architecture.png" alt="ShiftRelay system architecture">
+  <div class="plate">SYSTEM ARCHITECTURE · PNG / SVG SET · 04</div>
+</section>
+
+<!-- 05 -->
+<section class="slide diagram">
+  <img src="../diagrams/approval-sequence.png" alt="Friday approval sequence">
+  <div class="plate">FRIDAY APPROVAL · 05</div>
+</section>
+
+<!-- 06 -->
+<section class="slide diagram">
+  <img src="../diagrams/fresh-session-sequence.png" alt="Monday fresh-session sequence">
+  <div class="plate">MONDAY FRESH SESSION · 06</div>
+</section>
+
+<!-- 07 -->
+<section class="slide diagram">
+  <img src="../diagrams/applicability-gate.png" alt="Deterministic applicability gate">
+  <div class="plate">THE DETERMINISTIC GATE · 07</div>
+</section>
+
+<!-- 08 -->
+<section class="slide evidence">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">MEASURED · 2026-11-24</div></div>
+    <h1>Sixteen decisions. Zero incorrect recommendations.</h1>
+    <p class="lede">8 frozen synthetic scenarios × 2 arms. Every decision used its own Meko conversation. The baseline gets the same manual, but no promoted fix.</p>
+    <div class="metrics">
+      <div class="metric good"><div class="v">16/16</div><div class="l">CORRECT DECISIONS<br>TREATMENT + BASELINE</div></div>
+      <div class="metric good"><div class="v">0</div><div class="l">INCORRECT<br>RECOMMENDATIONS</div></div>
+      <div class="metric good"><div class="v">7/7</div><div class="l">CONTROL CHECKS<br>PASS</div></div>
+      <div class="metric"><div class="v">30</div><div class="l">TREATMENT<br>MCP CALLS</div></div>
+      <div class="metric"><div class="v">1039<span style="font-size:16px; letter-spacing:0;"> ms</span></div><div class="l">TREATMENT P50<br>898 ms MEAN</div></div>
+    </div>
+    <div class="results">
+      <div class="result-row result-head"><div>SCENARIO</div><div>ARM</div><div>OBSERVED</div></div>
+      <div class="result-row"><div>Exact match · P100 / 2.4</div><div class="arm">treatment</div><div class="out ok">RECOMMENDED</div></div>
+      <div class="result-row"><div>Missing firmware · P100</div><div class="arm">treatment</div><div class="out ask">QUESTION</div></div>
+      <div class="result-row"><div>Firmware mismatch · 2.3 vs 2.4</div><div class="arm">treatment</div><div class="out hold">WITHHELD</div></div>
+      <div class="result-row"><div>Withdrawn live · retrieval returns it</div><div class="arm">treatment</div><div class="out hold">WITHHELD</div></div>
+      <div class="result-row"><div>Superseded v1 · current is v2</div><div class="arm">treatment</div><div class="out hold">WITHHELD</div></div>
+    </div>
+    <div class="fine">TOKEN COUNTS NOT EXPOSED · BOTH ARMS USE deterministic-rules-v1 · FULL EVIDENCE IN docs/evidence/evaluation.json</div>
+  </div>
+  <div class="foot"><span>SHIFTRELAY · SYNTHETIC PRINTER CASES</span><span class="slide-no">08 / 11</span></div>
+</section>
+
+<!-- 09 -->
+<section class="slide meko">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">VERIFIED INTEGRATION · NOT A MOCK</div></div>
+    <h1>Meko carries the context. The app owns the decision.</h1>
+    <div class="cols">
+      <div>
+        <h3>What is actually verified</h3>
+        <div class="list">
+          <div class="item"><b>01</b><span>MCP <b>2025-06-18</b> at mcp.mekodata.ai/mcp; <b>57 tools</b> discovered; REST health returned ok.</span></div>
+          <div class="item"><b>02</b><span>A proposed learning written by intake was promoted at approval and retrieved by a separate fresh MCP session.</span></div>
+          <div class="item"><b>03</b><span>Artifacts are content-addressed by SHA-256; the local hash matched Meko's content_hash.</span></div>
+          <div class="item"><b>04</b><span>One datapack, shiftrelay, plus a separate baseline datapack for the measured comparison.</span></div>
+          <div class="item"><b>05</b><span>Every decision is recorded with its session id, retrieved snapshot, canonical status, checks and outcome.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="box">
+          <h3>What we do not claim</h3>
+          <p>No direct YSQL connection string is exposed. ShiftRelay demonstrates YugabyteDB-backed operations <strong>through Meko only</strong>. Meko cannot un-promote or mutate a promoted memory through the verified API, so the app carries withdrawal and supersession in its canonical record.</p>
+          <div class="stamp">DOCUMENTED CONTROL METADATA</div>
+        </div>
+        <div class="box">
+          <h3>Negative result, kept visible</h3>
+          <p>Live retrieval after withdrawal still returned the approved snapshot in this fixture set. That is the point of the canonical gate, and it is recorded as a failure mode of retrieval-only designs — not hidden as a success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>SHIFTRELAY · SYNTHETIC PRINTER CASES</span><span class="slide-no">09 / 11</span></div>
+</section>
+
+<!-- 10 -->
+<section class="slide demo">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">DEMO · 3:01 · UNDER 5:00</div></div>
+    <h1>Watch the relay run.</h1>
+    <div class="grid">
+      <img class="shot" src="../demo/poster.jpg" alt="ShiftRelay demo poster">
+      <div class="bullets">
+        <div class="bullet"><b>NARRATED EXPLAINER</b>The problem, the relay, the gate and the measured result.</div>
+        <div class="bullet"><b>ARCHITECTURE CHAPTER</b>Four diagrams: system, Friday approval, Monday fresh session, decision gate.</div>
+        <div class="bullet"><b>GENUINE UI CAPTURE</b>Intake, approval, fresh-session retrieval and the evidence table in Chromium.</div>
+        <div class="bullet"><b>SYNTHETIC ONLY</b>No API key, account identity, owner email or private transcript on screen.</div>
+        <div class="linkline">docs/demo/shiftrelay-demo.mp4<br>github.com/yablokolabs/shiftrelay</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>SHIFTRELAY · SYNTHETIC PRINTER CASES</span><span class="slide-no">10 / 11</span></div>
+</section>
+
+<!-- 11 -->
+<section class="slide dark close">
+  <div class="pad">
+    <div class="topline"><div class="brand">Shift<span>Relay</span></div><div class="topnote">CONTEXTCON · SHIFTRELAY</div></div>
+    <h1>Retrieved content is data. <em>Never authority.</em></h1>
+    <div class="sub">Carry the fix across the shift. Keep the decision in the app. Show every check that made it.</div>
+    <div class="links">
+      <div class="link"><strong>REPO</strong> github.com/yablokolabs/shiftrelay</div>
+      <div class="link"><strong>DEMO</strong> docs/demo/shiftrelay-demo.mp4</div>
+      <div class="link"><strong>EVIDENCE</strong> docs/evidence/evaluation.json</div>
+    </div>
+  </div>
+  <div class="foot"><span>SYNTHETIC PRINTER CASES ONLY</span><span class="slide-no">11 / 11</span></div>
+</section>
+
+</body>
+</html>
