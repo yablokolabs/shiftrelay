@@ -133,9 +133,9 @@ assets/          Supplied ShiftRelay logo and icon
 
 [![ShiftRelay demo](docs/demo/poster.jpg)](docs/demo/shiftrelay-demo.mp4)
 
-- One continuous submission demo (3:01, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4) — 1:08 narrated explainer, a 0:54 architecture chapter with four diagrams, a short handoff, then the 0:56 genuine Chromium walkthrough with clean captions.
+- One continuous submission demo (4:04, 1080p): [`docs/demo/shiftrelay-demo.mp4`](docs/demo/shiftrelay-demo.mp4) — a 1:03 plain-language backstory, the 1:08 narrated explainer, a 0:54 architecture chapter with four diagrams, a short handoff, then the 0:56 genuine Chromium walkthrough with clean captions.
 - Standalone genuine UI capture (0:56, silent): [`docs/demo/shiftrelay-walkthrough.mp4`](docs/demo/shiftrelay-walkthrough.mp4) — the component used in the combined cut.
-- Pitch deck (PDF, 11 slides, 526 KB): [`docs/ShiftRelay-Pitch-Deck.pdf`](docs/ShiftRelay-Pitch-Deck.pdf) — problem, relay, four architecture views, measured results, Meko limits and demo links.
+- Pitch deck (PDF, 11 slides, 547 KB): [`docs/ShiftRelay-Pitch-Deck.pdf`](docs/ShiftRelay-Pitch-Deck.pdf) — problem, relay, four architecture views, measured results, Meko limits and demo links.
 - Deck source and diagram set: [`docs/deck/index.html`](docs/deck/index.html) · [`docs/diagrams/`](docs/diagrams/)
 - Demo storyboard, narration and recording notes: [`docs/DEMO.md`](docs/DEMO.md)
 - Meko contract and observed operations: [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md)

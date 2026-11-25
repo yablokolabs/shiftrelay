@@ -12,7 +12,7 @@ Only technologies actually used and verified:
 - **Node test runner via tsx** — deterministic unit tests for applicability and revision guards.
 - **Remotion 4.0.534** — programmatic 1920×1080 explainer with React scenes, transitions and audio.
 - **Piper TTS** — local British female narration (`en_GB-jenny_dioco-medium`); no hosted voice API or key.
-- **Chromium + ffmpeg** — headless visual checks, genuine UI capture, combined 3:01 cut, architecture chapter and H.264/AAC encode.
+- **Chromium + ffmpeg** — headless visual checks, genuine UI capture, combined 4:04 cut, plain-language backstory, architecture chapter and H.264/AAC encode.
 - **Diagram Design 2.6** — four architecture/sequence/gate diagrams from the local checkout at `/root/diagram-design`, exported to SVG and PNG at 1440×810.
 - **Headless Chromium print-to-PDF** — 11-slide, 16:9 pitch deck generated from `docs/deck/index.html`.
 

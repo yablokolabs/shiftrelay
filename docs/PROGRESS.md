@@ -88,4 +88,17 @@ Date: 2026-11-25
 
 ### Next action
 
-Submission-ready. Optional: upload the 3:01 combined cut to the operator's preferred host and link it from the Devpost entry; attach the PDF deck.
+Superseded by M6: the submission cut now opens with a plain-language backstory and runs 4:04.
+
+## M6 — plain-language backstory (complete)
+
+Date: 2026-11-25
+
+- Added a **1:03** backstory before the explainer: a Friday fuser fix on a P100 at firmware 2.4, a Monday P100 at firmware 2.3, why search is not proof, and the ShiftRelay rule. Five local Piper lines; reuses the existing music bed.
+- Extended the submission cut to **4:04**; refreshed the poster and runtime references.
+- Refreshed the deck's demo slide and regenerated the PDF at 547 KB.
+- No owner identity, credential or attribution footer added.
+
+### Next action
+
+Submission-ready. Optional: upload the 4:04 combined cut to the operator's preferred host and link it from the Devpost entry; attach the PDF deck.

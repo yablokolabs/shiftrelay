@@ -1,12 +1,12 @@
 # Demo
 
-The submission cut is one continuous **3:01** video, well under the five-minute limit. It opens with the 1:08 narrated 1080p explainer, adds a 0:54 narrated architecture chapter with four diagrams, cuts through a 2.4-second handoff card, and ends with the 0:56 genuine Chromium walkthrough at 1080p. The base explainer and walkthrough carry motion and a music bed; the architecture chapter reuses that bed. All footage uses synthetic printer cases.
+The submission cut is one continuous **4:04** video, well under the five-minute limit. It opens with a 1:03 plain-language backstory — a Friday fix, a Monday firmware mismatch, and the gap between a good answer and a safe one. It then runs the 1:08 narrated 1080p explainer, a 0:54 narrated architecture chapter with four diagrams, a 2.4-second handoff card, and the 0:56 genuine Chromium walkthrough at 1080p. The explainer and walkthrough carry motion and a music bed; the backstory and architecture chapters reuse that bed. All footage uses synthetic printer cases.
 
 | Asset | Length | What it is |
 | --- | --- | --- |
-| [`docs/demo/shiftrelay-demo.mp4`](demo/shiftrelay-demo.mp4) | **3:01** | Combined submission cut. Narrated explainer, four-diagram architecture chapter, handoff card, then the genuine UI walkthrough with clean captions. |
+| [`docs/demo/shiftrelay-demo.mp4`](demo/shiftrelay-demo.mp4) | **4:04** | Combined submission cut. Plain-language backstory, narrated explainer, four-diagram architecture chapter, handoff card, then the genuine UI walkthrough with clean captions. |
 | [`docs/demo/shiftrelay-walkthrough.mp4`](demo/shiftrelay-walkthrough.mp4) | **0:56** | Standalone genuine Chromium capture at 1440×900. Silent, with the original burned-in captions. |
-| [`docs/demo/poster.jpg`](demo/poster.jpg) | — | Poster frame from the gate scene. |
+| [`docs/demo/poster.jpg`](demo/poster.jpg) | — | Poster frame from the backstory title card. |
 
 The standalone capture's burned-in captions are clipped at the bottom edge. The combined cut crops that edge, re-sets the captions in a 128px lower third, and keeps the full decision path visible.
 
@@ -16,11 +16,24 @@ All segments use synthetic cases only. No API key, account identity, owner email
 
 | Time | Segment | What is shown |
 | --- | --- | --- |
-| 0:00 | Explainer | Six scenes: hook, problem, four-step flow, gate decisions, measured results, close. |
-| 1:08 | Architecture | 0:54 narrated chapter: system boundaries, Friday approval, Monday fresh session, deterministic gate. |
-| 2:02 | Handoff | 2.4-second card: **Now, the running console.** |
-| 2:04 | Walkthrough | Genuine Chromium console: intake, approval, fresh session, evidence table. |
-| 3:01 | End | Final evidence table, then the music fades. |
+| 0:00 | Backstory | 1:03 plain-language chapter: a Friday fix, a Monday firmware mismatch, why search is not proof, and the rule. |
+| 1:03 | Explainer | Six scenes: hook, problem, four-step flow, gate decisions, measured results, close. |
+| 2:11 | Architecture | 0:54 narrated chapter: system boundaries, Friday approval, Monday fresh session, deterministic gate. |
+| 3:05 | Handoff | 2.4-second card: **Now, the running console.** |
+| 3:07 | Walkthrough | Genuine Chromium console: intake, approval, fresh session, evidence table. |
+| 4:04 | End | Final evidence table, then the music fades. |
+
+## Backstory
+
+Five beats, written for a non-technical viewer:
+
+1. **Title** — the fix worked on Friday; on Monday, it was wrong.
+2. **Friday** — a field technician fixes a recurring fuser fault on a P100 at firmware 2.4; a senior technician approves it; the shift ends.
+3. **Monday** — a different technician finds the same fault on a P100 running firmware 2.3; Friday's approved fix comes back, but it is scoped to firmware 2.4, so the old adjustment no longer applies.
+4. **The gap** — search can find text, but it cannot prove approval, currency or scope.
+5. **The rule** — capture, approve, carry, verify; then recommend, ask or withhold.
+
+The chapter is five static 1920×1080 HTML slides rendered in Chromium, with five local Piper narration lines. It reuses the demo's music bed and fades to black before the existing explainer title.
 
 ## Explainer storyboard
 
@@ -55,9 +68,9 @@ REMOTION_BROWSER=/path/to/chrome npm run render
 
 `REMOTION_BROWSER` is only needed where Remotion cannot download its own browser.
 
-The submission cut is assembled with ffmpeg from the updated animated/music base and the architecture chapter: 2.4-second handoff card, then the walkthrough normalized to 1632×952 inside a 1920×1080 frame, with a 128px lower third for re-set captions. The result is 1920×1080 at 30 fps, H.264 CRF 20, AAC 48 kHz stereo.
+The submission cut is assembled with ffmpeg from the backstory chapter, the updated animated/music base and the architecture chapter: 2.4-second handoff card, then the walkthrough normalized to 1632×952 inside a 1920×1080 frame, with a 128px lower third for re-set captions. The result is 1920×1080 at 30 fps, H.264, AAC 48 kHz stereo.
 
-The architecture chapter uses four 1920×1080 slides built from the 1440×810 diagram PNGs, with four local Piper narration lines. It reuses the updated base's music bed from the walkthrough section, then hands back to the existing card and live capture. The walkthrough section is no longer silent in the combined cut; the standalone capture remains silent.
+The backstory chapter uses five 1920×1080 slides and five local Piper lines, then fades to black before the explainer. The architecture chapter uses four 1920×1080 slides built from the 1440×810 diagram PNGs, with four local Piper narration lines. Both chapters reuse the updated base's music bed from the walkthrough section. The walkthrough section is no longer silent in the combined cut; the standalone capture remains silent.
 
 ## Genuine UI walkthrough
 
@@ -80,7 +93,7 @@ Recording notes:
 
 - Record only the seeded synthetic fixtures. Do not show `.env`, the Meko portal key screen, account identity or any private transcript.
 - If approval is recorded live, wait for `memory_promote` confirmation before moving on.
-- Keep any recording under 5:00. The delivered combined cut is 3:01.
+- Keep any recording under 5:00. The delivered combined cut is 4:04.
 
 ## Reproduction
 
