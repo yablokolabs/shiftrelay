@@ -20,11 +20,11 @@ Suggested topics: `meko`, `mcp`, `yugabytedb`, `typescript`, `react`, `shared-me
 
 ## Video
 
-- [x] Under five minutes: one 4:04 submission cut, combining a 1:03 plain-language backstory, the 1:08 narrated explainer, a 0:54 architecture chapter, and the 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
+- [x] Under five minutes: one 3:57 submission cut, combining a 1:03 plain-language backstory, the 1:01 narrated technical explainer, a 0:54 architecture chapter, and the 0:56 genuine UI walkthrough. See `docs/DEMO.md`.
 - [x] One continuous video with a hypothetical Friday/Monday backstory, four architecture diagrams, a handoff card and clean, re-set walkthrough captions; the standalone capture remains as supporting evidence.
 - [x] Synthetic cases visibly labeled on every decision card.
 - [x] No API key, account identity, private transcript or owner email on screen.
-- [x] Shows Friday's approval, Monday's fresh-session question, a withdrawn-fix withhold and the measured comparison.
+- [x] Shows Friday's approval, Monday's firmware-mismatch withhold, a withdrawn-fix withhold and the measured comparison.
 - [ ] Upload where the operator prefers; paste the link into Devpost.
 
 ## Presentation

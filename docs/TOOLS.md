@@ -14,7 +14,7 @@ Checked 2026-11-24 before building; updated 2026-11-25 for the diagram, deck and
 | diagram-design | **Available** at `/root/diagram-design` (v2.6) | Four HTML/SVG diagrams using the project palette. `self_check.py` and `verify_geometry.py` passed |
 | Playwright | **Not installed locally** | The skill's PNG export helper was unavailable; PNGs were rasterized from SVG with headless Chromium instead |
 | Chromium | **Available** at `/root/.hermes/tools/chromium-1248/chrome-linux64/chrome` | Headless screenshots, backstory slide renders, SVG-to-PNG at 1440×810, and 16:9 PDF deck export |
-| ffmpeg | **Available** | UI capture assembly, combined 4:04 cut, backstory and architecture chapters, caption lower third, final H.264/AAC encode and audio level check |
+| ffmpeg | **Available** | UI capture assembly, combined 3:57 cut, backstory and architecture chapters, caption lower third, final H.264/AAC encode and audio level check |
 | Local MCP server `jnaapakam` | Configured but unrelated | Not used |
 
 No external model key was used. `MODEL_PROVIDER=deterministic`; the optional OpenRouter adapter stays disabled unless the operator supplies a key.

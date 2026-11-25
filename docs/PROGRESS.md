@@ -88,17 +88,18 @@ Date: 2026-11-25
 
 ### Next action
 
-Superseded by M6: the submission cut now opens with a plain-language backstory and runs 4:04.
+Superseded by M6: the submission cut now opens with a plain-language backstory and runs 3:57.
 
 ## M6 — plain-language backstory (complete)
 
 Date: 2026-11-25
 
 - Added a **1:03** backstory before the explainer: a Friday fuser fix on a P100 at firmware 2.4, a Monday P100 at firmware 2.3, why search is not proof, and the ShiftRelay rule. Five local Piper lines; reuses the existing music bed.
-- Extended the submission cut to **4:04**; refreshed the poster and runtime references.
+- Removed the old explainer hook from the combined cut. Its synthetic Monday card said **07:10, firmware not recorded, ask for firmware**, contradicting the backstory's **08:02, firmware 2.3, withhold the 2.4 fix**. The technical section now starts at the problem chapter, with a 0.45-second audio-led beat at the join.
+- The resulting submission cut is **3:57**; normalised the mix to **-14 LUFS** with a **-1 dBTP** ceiling and refreshed the poster and runtime references.
 - Refreshed the deck's demo slide and regenerated the PDF at 547 KB.
 - No owner identity, credential or attribution footer added.
 
 ### Next action
 
-Submission-ready. Optional: upload the 4:04 combined cut to the operator's preferred host and link it from the Devpost entry; attach the PDF deck.
+Submission-ready. Optional: upload the 3:57 combined cut to the operator's preferred host and link it from the Devpost entry; attach the PDF deck.
